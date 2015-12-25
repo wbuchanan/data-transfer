@@ -47,7 +47,7 @@
 	<!-- Defines how Maven should build the Java binaries -->
 	<build>
 		<defaultGoal>install</defaultGoal>
-		<finalName>StataDta</finalName>
+		<finalName>data-transfer</finalName>
 		<plugins>
 
 
@@ -105,6 +105,13 @@
 	<!-- Contains all dependencies required by the project -->
 	<dependencies>
 		<!--
+		<dependency>
+			<groupId>com.stata</groupId>
+			<artifactId>sfi</artifactId>
+			<version>14</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId></groupId>
 			<artifactId></artifactId>
