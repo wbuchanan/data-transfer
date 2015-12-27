@@ -1,11 +1,47 @@
 package org.paces.data.Stata;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+
 /***
  * @author Billy Buchanan
  * @version 0.0.0
  */
 public class Read {
 
+	// Array to store a single byte
+	byte[] firstFileByte = new byte[1];
+
+	RandomAccessFile stataFile;
+
+	Read(String[] args) {
+
+		try {
+			this.stataFile = new RandomAccessFile(new File(args[0]), "r");
+			checkVersion(this.stataFile);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void checkVersion(RandomAccessFile stData) {
+		try {
+			stData.seek(0);
+			stData.read(firstFileByte);
+			if (firstFileByte[0] >= 113 && firstFileByte[0] <= 115) {
+
+			} else if (firstFileByte[0] == 60) {
+
+			} else {
+				throw new DtaCorrupt();
+			}
+		} catch (IOException | DtaCorrupt e) {
+			e.printStackTrace();
+		}
+	}
 
 
 	/*
@@ -48,7 +84,7 @@ DATASET_LABEL_OFFSET = NOBS_OFFSET + NOBS + NOBS_CLOSE + DATASET_LABEL_OPEN;
 DATASET_LAB_LENGTH = 2;
 DATASET_LABEL_CLOSE = "</label>".getBytes().length;
 DATASET_TIMESTAMP_OPEN = "<timestamp>".getBytes().length;
-RandomAccessFile x = new RandomAccessFile(new File("/Users/billy/Desktop/stmissings.dta"), "r");
+
 x.getFilePointer()
 byte[] release = new byte[RELEASE];
 byte[] byteorder = new byte[BYTEORDER];

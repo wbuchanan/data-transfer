@@ -1,5 +1,7 @@
 package org.paces.data.Stata;
 
+import org.paces.data.Stata.Version.NewFormats;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -21,45 +23,37 @@ public class StataWithStrLs {
 	
 	private long timestampPosition;
 	
-	// File opening tag
-	private final int DTA_OPEN = "<stata_dta>".getBytes().length;
-	
-	// File header opening tag
-	private final int HEADER_OPEN = "<header>".getBytes().length;
-	
-	// File release version opening tag
-	private final int RELEASE_OPEN = "<release>".getBytes().length;
-	
 	// Release offset should be 28 bytes
-	private final int RELEASE_OFFSET = DTA_OPEN + HEADER_OPEN + RELEASE_OPEN;
-	
+	private final int RELEASE_OFFSET = NewFormats.getTagValue("odta") + NewFormats.getTagValue("oheader") + NewFormats.getTagValue("orelease");
+
 	// Length of the byte array to use for the release ID
 	private final int RELEASE = 3;
 	
 	// File release version closing tag
 	private final int RELEASE_CLOSE = "</release>".getBytes().length;
-	
+
 	// File release endianness opening tag
 	private final int BYTEORDER_OPEN = "<byteorder>".getBytes().length;
-	
-	private final int BYTEORDER_OFFSET = RELEASE_OFFSET + RELEASE + RELEASE_CLOSE + BYTEORDER_OPEN;
+
+	private final int BYTEORDER_OFFSET = RELEASE_OFFSET + RELEASE +
+			NewFormats.getTagValue("crelease") + NewFormats.getTagValue("obyteorder");
 	
 	// File is a three character string that is either MSF or LSF Should start at byte 52
 	private final int BYTEORDER = 3;
 	
 	// File endianness closinging tag
 	private final int BYTEORDER_CLOSE = "</byteorder>".getBytes().length;
-	
+
 	// File number of variables opening tag
 	private final int NVARS_OPEN = "<K>".getBytes().length;
-	
+
 	private final int NVARS_OFFSET = BYTEORDER_OFFSET + BYTEORDER + BYTEORDER_CLOSE + NVARS_OPEN;
 	
 	// File 2-byte unsigned integer
 	private final int NVARS = 2;
 	
 	// File number of variables closing tag
-	private final int NVARS_CLOSE = "<K>".getBytes().length;
+	private final int NVARS_CLOSE = "</K>".getBytes().length;
 	
 	// File number of observations opening tag
 	private final int NOBS_OPEN = "<N>".getBytes().length;
@@ -68,14 +62,20 @@ public class StataWithStrLs {
 	
 	// Number of observations is recorded in an 8 byte unsigned integer
 	private final int NOBS = 8;
-	
+
 	// File number of observations closing tag
-	private final int NOBS_CLOSE = "<N>".getBytes().length;
+	private final int NOBS_CLOSE = "</N>".getBytes().length;
 	
 	// Opening tag for the datast label
 	private final int DATASET_LABEL_OPEN = "<label>".getBytes().length;
 	
 	private final int DATASET_LABEL_OFFSET = NOBS_OFFSET + NOBS + NOBS_CLOSE + DATASET_LABEL_OPEN;
+
+	// Closing tag for the datast label
+	private final int DATASET_LABEL_CLOSE = "</label>".getBytes().length;
+
+	// Opening tag for the data set timestamp
+	private final int DATASET_TIMESTAMP_OPEN = "<timestamp>".getBytes().length;
 
 	// Length of the closing tag of the time stamp
 	private final int DATASET_TIMESTAMP_CLOSE = "</timestamp>".getBytes().length;
@@ -89,12 +89,6 @@ public class StataWithStrLs {
 	// 2-byte unsigned int with length of the label string (up to 80 characters)
 	// If field contains 2 bytes of 0 (0000) there is no label
 	private final int DATASET_LAB_LENGTH = 2;
-
-	// Closing tag for the datast label
-	private final int DATASET_LABEL_CLOSE = "<label>".getBytes().length;
-
-	// Opening tag for the data set timestamp
-	private final int DATASET_TIMESTAMP_OPEN = "<timestamp>".getBytes().length;
 
 	// Offset to get to the start of the dataset timestamp
 	private final int DATASET_TIMESTAMP_OFFSET = DATASET_LABEL_OFFSET + DATASET_LAB_LENGTH + DATASET_LABEL_CLOSE + DATASET_TIMESTAMP_OPEN;
@@ -126,33 +120,56 @@ public class StataWithStrLs {
 	// Allocate a byte array of width 17
 	byte[] timeStampText = new byte[17];
 
-	byte[] variableTypes = new byte[2];
-
-	byte[] variableLabels = new byte[129];
-
-	byte[] sortList = new byte[2];
-
-	byte[] displayFormats = new byte[57];
-
-	byte[] valueLabelNames = new byte[129];
-
-	byte[] variablelabels = new byte[321];
-
-	byte[] characteristicLength = new byte[4];
-
-	byte[] charPartVarName = new byte[128];
-
-	byte[] charPartCharName = new byte[128];
-
-	private final int MAX_CHARACTERISTIC_CONTENTS = 67784;
-
 	// Gets the length of the closing tag for the file map object
 	private final int MAP_CLOSE = "</map>".getBytes().length;
 
+	private final int VARIABLE_TYPES_OPEN = "<variable_types>".getBytes().length;
+	private final int VARIABLE_TYPES_CLOSE = "</variable_types>".getBytes().length;
+
+	private final int VARNAMES_OPEN = "<varnames>".getBytes().length;
+	private final int VARNAMES_CLOSE = "</varnames>".getBytes().length;
+
+	private final int SORTORDER_OPEN = "<sortlist>".getBytes().length;
+	private final int SORTORDER_CLOSE = "</sortlist>".getBytes().length;
+
+	private final int DISPLAY_FMT_OPEN = "<formats>".getBytes().length;
+	private final int DISPLAY_FMT_CLOSE = "</formats>".getBytes().length;
+
+	private final int VALUELAB_NAMES_OPEN = "<value_label_names>".getBytes().length;
+	private final int VALUELAB_NAMES_CLOSE = "</value_label_names>".getBytes().length;
+
+	private final int VARIABLE_LABELS_OPEN = "<variable_labels>".getBytes().length;
+	private final int VARIABLE_LABELS_CLOSE = "</variable_labels>".getBytes().length;
+
+	private final int CHARACTERISTICS_OPEN = "<characteristics>".getBytes().length;
+	private final int CHARACTERISTICS_CLOSE = "</characteristics>".getBytes().length;
+
+	private final int DATA_OPEN = "<data>".getBytes().length;
+	private final int DATA_CLOSE = "</data>".getBytes().length;
+
+	private final int STRLS_OPEN = "<strls>".getBytes().length;
+	private final int STRLS_CLOSE = "</strls>".getBytes().length;
+
+	private final int VALUE_LABELS_OPEN = "<value_labels>".getBytes().length;
+	private final int VALUE_LABELS_CLOSE = "</value_labels>".getBytes().length;
+
+	private final int VALLAB_OPEN = "<lbl>".getBytes().length;
+	private final int VALLAB_CLOSE = "</lbl>".getBytes().length;
+
+	private final int CHAR_OPEN = "<ch>".getBytes().length;
+	private final int CHAR_CLOSE = "</ch>".getBytes().length;
+
+	/**
+	 * Class constructor method.  Currently will only require a single
+	 * argument in the string array that will point towards the file to consume.
+	 * @param args Location of Stata data set stored in .dta format
+	 * @throws IOException Exception thrown if there is an error reading the
+	 * file from disk.
+	 */
 	StataWithStrLs(String[] args) throws IOException {
 
 		// Creates the object that will be read from
-		RandomAccessFile x = new RandomAccessFile(new File("/Users/billy/Desktop/stmissings.dta"), "r");
+		RandomAccessFile x = new RandomAccessFile(new File(args[0]), "r");
 		
 		// Move to the position containing the release offset version number
 		x.seek(RELEASE_OFFSET);
@@ -259,7 +276,7 @@ public class StataWithStrLs {
 		} // End Loop over values in the filemap object
 
 
-	}
+	} // Ends class constructor
 	
 	
 	
