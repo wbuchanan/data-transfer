@@ -163,17 +163,17 @@ public class NewFormats extends FileConstants {
 	 * Binary Large OBject types in Stata
 	 * @return A map with integer keys and string values
 	 */
-	public static Map<Integer, String> getDataTypes() {
-		Map<Integer, String> stataTypes = new HashMap<>();
+	public Map<Integer, Integer> getDataTypes() {
+		Map<Integer, Integer> stataTypes = new HashMap<>();
 		for (int i = 1; i < 2045; i++) {
-			stataTypes.put(i, "java.lang.String");
+			stataTypes.put(i, i);
 		}
-		stataTypes.put(32768, "java.lang.String");
-		stataTypes.put(65526, "java.lang.Double");
-		stataTypes.put(65527, "java.lang.Float");
-		stataTypes.put(65528, "java.lang.Integer");
-		stataTypes.put(65529, "java.lang.Short");
-		stataTypes.put(65530, "java.lang.Byte");
+		stataTypes.put(32768, 0);
+		stataTypes.put(65526, 8);
+		stataTypes.put(65527, 4);
+		stataTypes.put(65528, 4);
+		stataTypes.put(65529, 2);
+		stataTypes.put(65530, 1);
 		return stataTypes;
 	}
 

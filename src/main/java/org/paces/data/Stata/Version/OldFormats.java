@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * Created by billy on 12/27/15.
  */
-public class OldFormats extends FileConstants {
+public abstract class OldFormats extends FileConstants {
 
 	/***
 	 * Number of bytes to reserve for reading the release ID from the file
@@ -117,16 +117,16 @@ public class OldFormats extends FileConstants {
 	 * of Binary Large OBject types in Stata
 	 * @return A map with integer keys and string values
 	 */
-	public static Map<Integer, String> getDataTypes() {
-		Map<Integer, String> stataTypes = new HashMap<>();
+	public Map<Integer, Integer> getDataTypes() {
+		Map<Integer, Integer> stataTypes = new HashMap<>();
 		for (int i = 1; i < 244; i++) {
-			stataTypes.put(i, "java.lang.String");
+			stataTypes.put(i, i);
 		}
-		stataTypes.put(251, "java.lang.Byte");
-		stataTypes.put(252, "java.lang.Short");
-		stataTypes.put(253, "java.lang.Integer");
-		stataTypes.put(254, "java.lang.Float");
-		stataTypes.put(255, "java.lang.Double");
+		stataTypes.put(251, 1);
+		stataTypes.put(252, 2);
+		stataTypes.put(253, 4);
+		stataTypes.put(254, 4);
+		stataTypes.put(255, 8);
 		return stataTypes;
 	}
 

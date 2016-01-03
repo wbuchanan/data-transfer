@@ -159,6 +159,9 @@ public class StataWithStrLs {
 	private final int CHAR_OPEN = "<ch>".getBytes().length;
 	private final int CHAR_CLOSE = "</ch>".getBytes().length;
 
+	private final List<Long> offsetMods = new ArrayList<Long>();
+
+
 	/**
 	 * Class constructor method.  Currently will only require a single
 	 * argument in the string array that will point towards the file to consume.
@@ -167,6 +170,8 @@ public class StataWithStrLs {
 	 * file from disk.
 	 */
 	StataWithStrLs(String[] args) throws IOException {
+
+		setOffsetModifiers();
 
 		// Creates the object that will be read from
 		RandomAccessFile x = new RandomAccessFile(new File(args[0]), "r");
@@ -270,17 +275,38 @@ public class StataWithStrLs {
 			// Stores an array of 8 bytes in sequential positions of the array
 			x.read(position);
 
+			Long bytePosition = StConvert.toStata(position, byteOrder.swapto, (long) 0);
+
 			// Add the numeric value to the list object
-			filemap.add(StConvert.toStata(position, byteOrder.swapto, (long) 0));
+			filemap.add(bytePosition + this.offsetMods.get(i));
 			
 		} // End Loop over values in the filemap object
 
 
 	} // Ends class constructor
-	
-	
-	
-	
+
+	/***
+	 * Method creates a List of Integer offset values to adjust the values
+	 * returned by the filemap object
+	 */
+	public void setOffsetModifiers() {
+		this.offsetMods.add(0, (long) 0);
+		this.offsetMods.add(1, (long) MAP_OPEN);
+		this.offsetMods.add(2, (long) VARIABLE_TYPES_OPEN);
+		this.offsetMods.add(3, (long) VARNAMES_OPEN);
+		this.offsetMods.add(4, (long) SORTORDER_OPEN);
+		this.offsetMods.add(5, (long) DISPLAY_FMT_OPEN);
+		this.offsetMods.add(6, (long) VALUELAB_NAMES_OPEN);
+		this.offsetMods.add(7, (long) VARIABLE_LABELS_OPEN);
+		this.offsetMods.add(8, (long) CHARACTERISTICS_OPEN);
+		this.offsetMods.add(9, (long) DATA_OPEN);
+		this.offsetMods.add(10, (long) STRLS_OPEN);
+		this.offsetMods.add(11, (long) VALUE_LABELS_OPEN);
+		this.offsetMods.add(12, (long) 0);
+		this.offsetMods.add(13, (long) 0);
+	}
+
+
 	
 	
 }

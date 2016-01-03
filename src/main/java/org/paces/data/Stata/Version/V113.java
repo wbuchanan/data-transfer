@@ -1,5 +1,7 @@
 package org.paces.data.Stata.Version;
 
+import java.util.Map;
+
 /**
  * Created by billy on 12/27/15.
  */
@@ -27,6 +29,11 @@ public class V113 extends OldFormats implements FileVersion {
 	@Override
 	public Integer getVersionNumber() {
 		return this.versionNumber;
+	}
+
+	@Override
+	public Map<Integer, Integer> getDataTypes() {
+		return super.getDataTypes();
 	}
 
 }

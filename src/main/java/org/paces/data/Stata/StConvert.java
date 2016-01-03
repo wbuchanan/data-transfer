@@ -11,7 +11,12 @@ public class StConvert {
 
 	private static String getStataString(byte[] stringType, java.nio.ByteOrder sbo) {
 		ByteBuffer.wrap(stringType).order(sbo);
-		return new String(stringType);
+		int endpos = 0;
+		while (endpos < stringType.length) {
+			if (stringType[endpos] == 0) break;
+			else endpos++;
+		}
+		return new String(stringType, 0, endpos);
 	}
 
 	private static Byte getStataByte(byte[] byteType, java.nio.ByteOrder sbo) {
