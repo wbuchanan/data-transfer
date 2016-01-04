@@ -1,4 +1,4 @@
-package org.paces.data.Stata;
+package org.paces.data.Stata.Readers;
 
 import java.nio.ByteOrder;
 

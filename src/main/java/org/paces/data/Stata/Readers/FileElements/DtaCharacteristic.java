@@ -1,4 +1,6 @@
-package org.paces.data.Stata;
+package org.paces.data.Stata.Readers.FileElements;
+
+import org.paces.data.Stata.Readers.StConvert;
 
 import java.nio.ByteOrder;
 import java.util.List;

@@ -9,7 +9,7 @@ public class V114 extends OldFormats implements FileVersion {
 
 	private Integer versionNumber;
 
-	V114(String versionID) {
+	public V114(String versionID) {
 		this.versionNumber = Integer.valueOf(versionID);
 	}
 

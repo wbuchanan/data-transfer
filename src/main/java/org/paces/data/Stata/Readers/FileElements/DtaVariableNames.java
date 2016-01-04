@@ -1,4 +1,7 @@
-package org.paces.data.Stata;
+package org.paces.data.Stata.Readers.FileElements;
+
+import org.paces.data.Stata.Readers.StConvert;
+import org.paces.data.Stata.Readers.StataByteOrder;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;

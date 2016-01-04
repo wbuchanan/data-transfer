@@ -1,4 +1,4 @@
-package org.paces.data.Stata;
+package org.paces.data.Stata.Writers;
 
 import org.paces.data.Stata.Version.V118;
 

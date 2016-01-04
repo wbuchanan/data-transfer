@@ -5,7 +5,7 @@ import java.util.Map;
 /**
  * Created by billy on 12/27/15.
  */
-public interface FileVersion {
+public abstract interface FileVersion {
 
 	public Integer getVersionNumber();
 

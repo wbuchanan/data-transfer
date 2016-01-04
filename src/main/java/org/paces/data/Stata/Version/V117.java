@@ -10,7 +10,7 @@ public class V117 extends NewFormats implements FileVersion {
 	private Integer versionNumber;
 	public static final int DATASET_LABEL_LENGTH = 1;
 
-	V117(String versionID) {
+	public V117(String versionID) {
 		this.versionNumber = Integer.valueOf(versionID);
 	}
 

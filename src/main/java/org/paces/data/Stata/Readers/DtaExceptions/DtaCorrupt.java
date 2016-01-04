@@ -1,4 +1,4 @@
-package org.paces.data.Stata;
+package org.paces.data.Stata.Readers.DtaExceptions;
 
 /**
  * @author Billy Buchanan

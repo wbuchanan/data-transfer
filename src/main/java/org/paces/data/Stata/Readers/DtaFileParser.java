@@ -1,4 +1,7 @@
-package org.paces.data.Stata;
+package org.paces.data.Stata.Readers;
+
+import org.paces.data.Stata.Readers.FileElements.DtaStrLs;
+import org.paces.data.Stata.Readers.FileElements.DtaValueLabel;
 
 import java.io.RandomAccessFile;
 import java.nio.ByteOrder;

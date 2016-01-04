@@ -1,4 +1,8 @@
-package org.paces.data.Stata;
+package org.paces.data.Stata.Readers;
+
+import org.paces.data.Stata.Readers.DtaExceptions.DtaCorrupt;
+import org.paces.data.Stata.Version.FileFormats;
+import org.paces.data.Stata.Version.FileVersion;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -16,6 +20,8 @@ public class Read {
 
 	RandomAccessFile stataFile;
 
+	FileVersion filetype;
+
 	Read(String[] args) {
 
 		try {
@@ -32,7 +38,7 @@ public class Read {
 			stData.seek(0);
 			stData.read(firstFileByte);
 			if (firstFileByte[0] >= 113 && firstFileByte[0] <= 115) {
-
+				filetype = FileFormats.getVersion(String.valueOf(firstFileByte[0]));
 			} else if (firstFileByte[0] == 60) {
 
 			} else {
