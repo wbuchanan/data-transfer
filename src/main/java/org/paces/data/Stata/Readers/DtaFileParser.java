@@ -26,7 +26,7 @@ public abstract interface DtaFileParser {
 	void setData(RandomAccessFile datafile, Long varLabsOffset, ByteOrder sbo);
 
 	List<Long> getFileMap();
-	List<Object> getDataTypes();
+	List<Object> getDtaTypes();
 	List<String> getVariableNames();
 	List<Integer> getSortOrder();
 	List<String> getDisplayFmts();

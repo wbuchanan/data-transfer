@@ -1,6 +1,6 @@
 package org.paces.data.Stata.Readers;
 
-import org.paces.data.Stata.Version.NewFormats;
+import org.paces.data.Stata.Readers.FileElements.ElementTags;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,11 +24,12 @@ public class StataWithStrLs {
 	private long timestampPosition;
 	
 	// Release offset should be 28 bytes
-	private final int RELEASE_OFFSET = NewFormats.getTagValue("odta") + NewFormats.getTagValue("oheader") + NewFormats.getTagValue("orelease");
+	private final int RELEASE_OFFSET = ElementTags.getTagValue("odta") +
+			ElementTags.getTagValue("oheader") + ElementTags.getTagValue("orelease");
 
 	// Length of the byte array to use for the release ID
 	private final int RELEASE = 3;
-	
+
 	// File release version closing tag
 	private final int RELEASE_CLOSE = "</release>".getBytes().length;
 
@@ -36,8 +37,8 @@ public class StataWithStrLs {
 	private final int BYTEORDER_OPEN = "<byteorder>".getBytes().length;
 
 	private final int BYTEORDER_OFFSET = RELEASE_OFFSET + RELEASE +
-			NewFormats.getTagValue("crelease") + NewFormats.getTagValue("obyteorder");
-	
+			ElementTags.getTagValue("crelease") + ElementTags.getTagValue("obyteorder");
+
 	// File is a three character string that is either MSF or LSF Should start at byte 52
 	private final int BYTEORDER = 3;
 	

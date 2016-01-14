@@ -1,5 +1,6 @@
 package org.paces.data.Stata.Version;
 
+import org.paces.data.Stata.Readers.FileElements.DtaStrLs;
 import org.paces.data.Stata.Readers.FileElements.ElementTags;
 
 import java.util.HashMap;
@@ -12,15 +13,42 @@ public class NewFormats extends FileConstants {
 
 	protected static final int RELEASE = 3;
 	protected static final int BYTEORDER = 3;
+	protected static final int NVARS = 2;
+	public static final int DATASET_LABEL_LENGTH = 2;
+	public static final int DATETIME = 1;
+	public static final int DATETIME_ENTRY = 17;
+
+	/**
+	 * Member used to Parse/Store Blobs
+	 */
+	public DtaStrLs blobs = null;
+
+	protected static final int RELEASE_OFFSET = ElementTags.getTagValue("odta") +
+												ElementTags.getTagValue("oheader") +
+												ElementTags.getTagValue("orelease");
+
+	protected static final int BYTEORDER_OFFSET = RELEASE_OFFSET + RELEASE +
+												  ElementTags.getTagValue("crelease") +
+			   									  ElementTags.getTagValue("obyteorder");
+
+	protected static final int NVARS_OFFSET = BYTEORDER_OFFSET + BYTEORDER +
+			 								  ElementTags.getTagValue("cbyteorder") +
+											  ElementTags.getTagValue("onvars");
 
 	public ElementTags etags;
 
-
-
 	protected NewFormats() {
-		etags = new ElementTags();
+		this.etags = new ElementTags();
 	}
 
+	/**
+	 * Method to access the element tags
+	 * @return
+	 */
+	public ElementTags getEtags() {
+		return this.etags;
+
+	}
 
 	/***
 	 * Method to return a Map object for type map after the introduction of

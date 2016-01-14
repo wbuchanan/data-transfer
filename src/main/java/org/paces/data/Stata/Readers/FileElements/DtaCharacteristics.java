@@ -6,7 +6,9 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by billy on 12/25/15.
@@ -14,65 +16,83 @@ import java.util.List;
 public class DtaCharacteristics {
 
 
-	private final ByteOrder swap;
-	private final int open = "<ch>".getBytes().length;
-	private final int between = "</ch><ch>".getBytes().length;
-	private final int close = "</ch>".getBytes().length;
+	private ByteOrder sbo;
+	private final Map<Integer, List<String>> characteristics =
+							new HashMap<>();
+	private Long off;
+	private RandomAccessFile x;
 
-	private List<DtaCharacteristic> characteristics = new ArrayList<>();
+	/**
+	 * Class constructor for dataset characteristics
+	 * @param x RandomAccessFile representing the .dta file
+	 * @param charOffset The offset used to access the characteristics
+	 * @param sbo The value use to swap byte order (when necessary)
+	 * @throws IOException Exception thrown if there is an error reading the
+	 * file
+	 */
+	DtaCharacteristics(RandomAccessFile x, Long charOffset, ByteOrder
+					   sbo) throws IOException {
+		setFile(x);
+		setCharOffset(charOffset);
+		setByteOrder(sbo);
+		if (hasCharacteristics()) setCharacteristics();
 
-	private long filepos;
-	private RandomAccessFile thefile;
+	}
 
-	DtaCharacteristics(RandomAccessFile stataFile, Long charOffset, ByteOrder
-					   sbo)
-			throws IOException {
-		this.thefile = stataFile;
-		this.swap = sbo;
-		this.filepos = charOffset;
-		this.thefile.seek(this.filepos + this.open);
-		while (hasNext()) {
-			characteristics.add(loadCharacteristics());
+	public Map<Integer, List<String>> getCharacteristics() {
+		return this.characteristics;
+	}
+
+	public List<String> getCharacteristic(Integer idx) {
+		return this.characteristics.get(idx);
+	}
+
+	public void setByteOrder(ByteOrder s) {
+		this.sbo = s;
+	}
+
+	public void setFile(RandomAccessFile x) {
+		this.x = x;
+	}
+
+	public void setCharOffset(Long offset) {
+		this.off = offset;
+	}
+
+	public Boolean hasCharacteristics() throws IOException {
+		this.x.seek(this.off);
+		byte[] noCharacteristics = new byte[18];
+		this.x.read(noCharacteristics);
+		return "</characteristics>".equals(new String(noCharacteristics));
+	}
+
+	/**
+	 * Method used to read/parse the dataset characteristics from bytes
+	 * @throws IOException
+	 */
+	public void setCharacteristics() throws IOException {
+		this.x.seek(this.off);
+		byte[] nxt = new byte[4];
+		this.x.read(nxt);
+		int mapid = 0;
+		while ("<ch>".equals(new String(nxt))) {
+			List<String> characteristic = new ArrayList<String>();
+			byte[] charLen = new byte[4];
+			this.x.read(charLen);
+			byte[] varname = new byte[129];
+			byte[] charname = new byte[129];
+			Integer chContents = StConvert.toStata(charLen, this.sbo, (int) 0) - 258;
+			byte[] character = new byte[chContents];
+			this.x.read(varname);
+			this.x.read(character);
+			characteristic.add(0, StConvert.toStata(varname, this.sbo, ""));
+			characteristic.add(1, StConvert.toStata(charname, this.sbo, ""));
+			characteristic.add(2, StConvert.toStata(character, this.sbo, ""));
+			characteristics.put(mapid, characteristic);
+			this.x.seek(this.x.getFilePointer() + 5);
+			this.x.read(nxt);
+			mapid++;
 		}
-	}
-
-	public Boolean hasNext() throws IOException {
-		byte[] test = new byte[4];
-		this.thefile.read(test);
-		if ("<ch>".equals(new String(test))) {
-			return true;
-		} else {
-			this.thefile.seek(this.filepos);
-			return false;
-		}
-	}
-
-	public DtaCharacteristic loadCharacteristics() throws IOException {
-		byte[] varName  = new byte[129];
-		byte[] charName = new byte[129];
-		byte[] characteristicLength = new byte[4];
-		this.thefile.read(characteristicLength);
-		List<byte[]> characteristic = new ArrayList<>();
-		Integer charlength = StConvert.toStata(characteristicLength, this.swap, (int) 0);
-		this.thefile.read(varName);
-		this.thefile.read(charName);
-		byte[] contents = new byte[charlength - 259];
-		this.thefile.read(contents);
-		characteristic.add(0, varName);
-		characteristic.add(1, charName);
-		characteristic.add(2, contents);
-		this.filepos = this.filepos + this.close;
-		return new DtaCharacteristic(characteristic, this.swap);
-	}
-
-	public List<String> getCharacteristic(int idx) {
-		return this.characteristics.get(idx).getCharacteristic();
-	}
-
-	public List<List<String>> getCharacteristics() {
-		List<List<String>> retval = new ArrayList<>();
-		this.characteristics.parallelStream().map(x -> retval.add(x.getCharacteristic()));
-		return retval;
 	}
 
 }

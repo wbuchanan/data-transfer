@@ -77,7 +77,7 @@ public class DtaVarTypes {
 
 	public void setReserveBytes(Integer vartype, Integer index) {
 		if (version != null) {
-			this.reserveBytes.add(index, version.getDataTypes().get(vartype));
+			this.reserveBytes.add(index, (Integer) this.version.getDataTypes().get(vartype));
 		}
 	}
 
