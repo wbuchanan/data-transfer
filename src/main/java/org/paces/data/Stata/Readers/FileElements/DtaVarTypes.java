@@ -2,7 +2,7 @@ package org.paces.data.Stata.Readers.FileElements;
 
 import org.paces.data.Stata.Readers.StConvert;
 import org.paces.data.Stata.Readers.StataByteOrder;
-import org.paces.data.Stata.Version.FileVersion;
+import org.paces.data.Stata.Version.*;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -20,27 +20,24 @@ public class DtaVarTypes {
 
 	private List<Integer> reserveBytes = new ArrayList<>();
 
-	DtaVarTypes(RandomAccessFile x, List<Long> offsets, Integer
-			numberVariables, StataByteOrder sbo) {
+	DtaVarTypes(V113 stata8) {
 
-		try {
-			x.seek(offsets.get(2));
+	}
 
-			for (int i = 0; i < numberVariables; i++) {
+	DtaVarTypes(V114 stata10) {
 
-				byte[] stvartypes = new byte[2];
+	}
 
-				x.read(stvartypes);
+	DtaVarTypes(V115 stata12) {
 
-				stVariableTypes.add(i, StConvert.toStata(stvartypes, sbo.swapto, (int) 0));
 
-			}
+	}
 
-		} catch (IOException e) {
+	DtaVarTypes(V117 stata13) {
 
-			e.printStackTrace();
+	}
 
-		}
+	DtaVarTypes(V118 stata14) {
 
 	}
 

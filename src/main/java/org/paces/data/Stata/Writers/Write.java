@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * Created by billy on 10/14/15.
  */
-public class DTA {
+public class Write {
 
 	public static Map<String, byte[]> getDtaBytes(V118 fileVersion) {
 		Map<String, byte[]> bytelen = new HashMap<>();

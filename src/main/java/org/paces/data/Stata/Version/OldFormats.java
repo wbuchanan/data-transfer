@@ -1,12 +1,34 @@
 package org.paces.data.Stata.Version;
 
+import org.paces.data.Stata.Readers.FileElements.*;
+import org.paces.data.Stata.Readers.StConvert;
+import org.paces.data.Stata.Readers.StataByteOrder;
+
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
  * Created by billy on 12/27/15.
  */
 public abstract class OldFormats extends FileConstants {
+
+	protected Integer K;
+	protected Integer N;
+	protected DtaCharacteristics characteristics;
+	protected DtaData thedata;
+	protected DtaDisplayFormats displayFormats;
+	protected DtaMap fileMap;
+	protected DtaSortOrder dataSortOrder;
+	protected DtaValueLabel valueLabels;
+	protected DtaValueLabelNames vallabNames;
+	protected DtaVariableLabels varLabels;
+	protected DtaVariableNames varnames;
+	protected DtaVarTypes dataTypes;
+	protected DtaStrLs stBlobs;
 
 	/***
 	 * Number of bytes to reserve for reading the release ID from the file
@@ -52,65 +74,6 @@ public abstract class OldFormats extends FileConstants {
 	 */
 	protected static final int TIME_STAMP = 18;
 
-	/***
-	 * Method used to store the data type list when reading from disk
-	 * @param nvars An integer containing the number of variables in the data
-	 *                 set
-	 * @return A byte array with # variables elements used to store the data
-	 * types for the corresponding variables
-	 */
-	public byte[] getTypeListContainer(Integer nvars) {
-		return new byte[nvars];
-	}
-
-	/***
-	 * Method used to store the variable name list
-	 * @param nvars An integer containing the number of variables in the data
-	 *                 set
-	 * @return A byte array with # variables elements each 32 bytes long
-	 * (will need to add 1 byte to seek the next position and avoid writing
-	 * any binary zeroes into the file)
-	 */
-	public byte[][] getVarListContainer(Integer nvars) {
-		return new byte[nvars][32];
-	}
-
-	/***
-	 * Method used to store the display format of the data. <it>In version
-	 * 113 formatted files, formats beginning with \%d are Date/DateTime
-	 * formats</it>.
-	 * @param nvars An integer containing the number of variables in the data
-	 *                 set
-	 * @return A byte array with # variables elements each 49 bytes wide used
-	 * to store the display format of the data.
-	 */
-	public byte[][] getFormatListContainer(Integer nvars) {
-		return new byte[nvars][49];
-	}
-
-	/***
-	 * Method used to store the value label names associated with a given
-	 * variable
-	 * @param nvars An integer containing the number of variables in the data
-	 *                 set
-	 * @return A byte array with # variables elements each of 32 bytes in
-	 * length containing the name of the associated variable label(s)
-	 */
-	public byte[][] getLabelListContainer(Integer nvars) {
-		return new byte[nvars][33];
-	}
-
-	/***
-	 * Method used to store the sort order list of variables
-	 * @param nvars An integer containing the number of variables in the data
-	 *                 set
-	 * @return A byte array with # variables elements containing 2-byte
-	 * unsigned ints with the variable index indicating the order in which
-	 * data are sorted.
-	 */
-	public byte[][] getSortOrderListContaint(Integer nvars) {
-		return new byte[nvars + 1][2];
-	}
 
 	/***
 	 * Method to return a Map object for type map prior to the introduction
@@ -129,5 +92,89 @@ public abstract class OldFormats extends FileConstants {
 		stataTypes.put(255, 8);
 		return stataTypes;
 	}
+
+	/**
+	 * Static method used to parse the file header from files created from
+	 * versions 8, 10, or 12 of Stata
+	 * @param stdata The representation of the .dta file on the JVM
+	 * @param byteReader A List of byte arrays created by the Load class
+	 *                      based on the release version of the file
+	 * @return A list of objects that contain the header data and will need
+	 * to be recast when being decoded
+	 * @throws IOException This will be caught by the class constructor for
+	 * the Load class
+	 */
+	public static List<Object> readHeader(RandomAccessFile stdata, List<byte[]>
+			byteReader) throws IOException {
+
+		// List object used to return the header values
+		List<Object> values = new ArrayList<>();
+
+		// Set the position of the file at the beginning
+		stdata.seek(0);
+
+		// Loop over the elements  of the list to read all of the header
+		// elements
+		for(int i = 0; i < byteReader.size(); i++) {
+
+			// Reads the first four bytes sequentially
+			stdata.read(byteReader.get(i));
+
+		} // End Loop to read the values
+
+		// Parse the first four elements as int values from the 1 byte
+		// elements
+		byte[] val = byteReader.get(0);
+
+		// Add each of these elements to the list object
+		values.add((int) val[0]);
+
+		// Get the byte array containing the byte order
+		byte[] bo = byteReader.get(1);
+
+		// 0x01 is HILO or "MSF" in later versions of the file spec
+		if ((int) bo[0] == 1) values.add("MSF");
+
+		// 0x02 is LOHI or "LSF" in later versions of the file spec
+		else values.add("LSF");
+
+		// Create a byte order variable using the byte array in position 1 of
+		// the bytereader (this is the header variable passed to the method)
+		StataByteOrder sbo = new StataByteOrder(byteReader.get(1));
+
+		// Parse the number of variables
+		Short K = StConvert.toStata(byteReader.get(4), sbo.swapto, (short) 0);
+
+		// Parse the number of observations
+		Integer N = StConvert.toStata(byteReader.get(5), sbo.swapto, (int) 0);
+
+		// Parse the datalabel
+		String datalabel = StConvert.toStata(byteReader.get(6), sbo.swapto, "");
+
+		// Parse the dataset timestamp
+		String timestamp = StConvert.toStata(byteReader.get(7), sbo.swapto, "");
+
+		// Used to store the starting position of the file map
+		Long offset = stdata.getFilePointer();
+
+		// Add the number of variables to the list object
+		values.add(K);
+
+		// Add the number of observations to the list object
+		values.add(N);
+
+		// Add the dataset label to the list object
+		values.add(datalabel);
+
+		// Add the time stamp to the list object
+		values.add(timestamp);
+
+		// Adds the offset to the file map in the last position
+		values.add(offset);
+
+		// Return the list object
+		return values;
+
+	} // End of Method declaration
 
 }

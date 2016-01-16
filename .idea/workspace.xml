@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a55b64e-6321-4376-8dfd-3a19445497d5" name="Default" comment="" />
+    <list default="true" id="9a55b64e-6321-4376-8dfd-3a19445497d5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/eslintPlugin.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/DTA.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Writers/DTA.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Writers/Write.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/DtaFileParser.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/DtaFileParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaData.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaMap.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaMap.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaVarTypes.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaVarTypes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/Load.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/Load.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/StataByteOrder.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/StataByteOrder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileConstants.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileConstants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileFormats.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileFormats.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileVersion.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileVersion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/NewFormats.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/NewFormats.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/OldFormats.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/OldFormats.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V113.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V113.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V114.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V114.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V115.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V115.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V117.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V117.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V118.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V118.java" />
+    </list>
     <ignored path="dta.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -36,46 +58,202 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DtaData.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6097561">
-              <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="V113.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="V113.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V113.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+            <state vertical-scroll-proportion="7.9802957">
+              <caret line="499" column="5" selection-start-line="499" selection-start-column="5" selection-end-line="499" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#10140#10141#0" expanded="true" />
+                <element signature="e#10158#10159#0" expanded="true" />
+                <element signature="e#11635#11636#0" expanded="true" />
+                <element signature="e#11653#11654#0" expanded="true" />
+                <element signature="e#11810#11811#0" expanded="true" />
+                <element signature="e#11828#11829#0" expanded="true" />
+                <element signature="e#12005#12006#0" expanded="true" />
+                <element signature="e#12023#12024#0" expanded="true" />
+                <element signature="e#12184#12185#0" expanded="true" />
+                <element signature="e#12202#12203#0" expanded="true" />
+                <element signature="e#12380#12381#0" expanded="true" />
+                <element signature="e#12398#12399#0" expanded="true" />
+                <element signature="e#12579#12580#0" expanded="true" />
+                <element signature="e#12597#12598#0" expanded="true" />
+                <element signature="e#12771#12772#0" expanded="true" />
+                <element signature="e#12789#12790#0" expanded="true" />
+                <element signature="e#12974#12975#0" expanded="true" />
+                <element signature="e#12992#12993#0" expanded="true" />
+                <element signature="e#13137#13138#0" expanded="true" />
+                <element signature="e#13155#13156#0" expanded="true" />
+                <element signature="e#13321#13322#0" expanded="true" />
+                <element signature="e#13339#13340#0" expanded="true" />
+                <element signature="e#13480#13481#0" expanded="true" />
+                <element signature="e#13498#13499#0" expanded="true" />
+                <element signature="e#13660#13661#0" expanded="true" />
+                <element signature="e#13686#13687#0" expanded="true" />
+                <element signature="e#13883#13884#0" expanded="true" />
+                <element signature="e#13908#13909#0" expanded="true" />
+                <element signature="e#14139#14140#0" expanded="true" />
+                <element signature="e#14159#14160#0" expanded="true" />
+                <element signature="e#14384#14385#0" expanded="true" />
+                <element signature="e#14404#14405#0" expanded="true" />
+                <element signature="e#14649#14650#0" expanded="true" />
+                <element signature="e#14680#14681#0" expanded="true" />
+                <element signature="e#14929#14930#0" expanded="true" />
+                <element signature="e#14964#14965#0" expanded="true" />
+                <element signature="e#15380#15381#0" expanded="true" />
+                <element signature="e#15408#15409#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DtaVarTypes.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaVarTypes.java">
+      <file leaf-file-name="V114.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V114.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="79" column="82" selection-start-line="79" selection-start-column="82" selection-end-line="79" selection-end-column="82" />
-              <folding />
+              <caret line="499" column="5" selection-start-line="499" selection-start-column="5" selection-end-line="499" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#10140#10141#0" expanded="true" />
+                <element signature="e#10158#10159#0" expanded="true" />
+                <element signature="e#11635#11636#0" expanded="true" />
+                <element signature="e#11653#11654#0" expanded="true" />
+                <element signature="e#11810#11811#0" expanded="true" />
+                <element signature="e#11828#11829#0" expanded="true" />
+                <element signature="e#12005#12006#0" expanded="true" />
+                <element signature="e#12023#12024#0" expanded="true" />
+                <element signature="e#12184#12185#0" expanded="true" />
+                <element signature="e#12202#12203#0" expanded="true" />
+                <element signature="e#12380#12381#0" expanded="true" />
+                <element signature="e#12398#12399#0" expanded="true" />
+                <element signature="e#12579#12580#0" expanded="true" />
+                <element signature="e#12597#12598#0" expanded="true" />
+                <element signature="e#12771#12772#0" expanded="true" />
+                <element signature="e#12789#12790#0" expanded="true" />
+                <element signature="e#12974#12975#0" expanded="true" />
+                <element signature="e#12992#12993#0" expanded="true" />
+                <element signature="e#13137#13138#0" expanded="true" />
+                <element signature="e#13155#13156#0" expanded="true" />
+                <element signature="e#13321#13322#0" expanded="true" />
+                <element signature="e#13339#13340#0" expanded="true" />
+                <element signature="e#13480#13481#0" expanded="true" />
+                <element signature="e#13498#13499#0" expanded="true" />
+                <element signature="e#13660#13661#0" expanded="true" />
+                <element signature="e#13686#13687#0" expanded="true" />
+                <element signature="e#13883#13884#0" expanded="true" />
+                <element signature="e#13908#13909#0" expanded="true" />
+                <element signature="e#14139#14140#0" expanded="true" />
+                <element signature="e#14159#14160#0" expanded="true" />
+                <element signature="e#14384#14385#0" expanded="true" />
+                <element signature="e#14404#14405#0" expanded="true" />
+                <element signature="e#14649#14650#0" expanded="true" />
+                <element signature="e#14680#14681#0" expanded="true" />
+                <element signature="e#14929#14930#0" expanded="true" />
+                <element signature="e#14964#14965#0" expanded="true" />
+                <element signature="e#15380#15381#0" expanded="true" />
+                <element signature="e#15408#15409#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileVersion.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileVersion.java">
+      <file leaf-file-name="V115.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V115.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-              <folding />
+              <caret line="499" column="5" selection-start-line="499" selection-start-column="5" selection-end-line="499" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#10140#10141#0" expanded="true" />
+                <element signature="e#10158#10159#0" expanded="true" />
+                <element signature="e#11635#11636#0" expanded="true" />
+                <element signature="e#11653#11654#0" expanded="true" />
+                <element signature="e#11810#11811#0" expanded="true" />
+                <element signature="e#11828#11829#0" expanded="true" />
+                <element signature="e#12005#12006#0" expanded="true" />
+                <element signature="e#12023#12024#0" expanded="true" />
+                <element signature="e#12184#12185#0" expanded="true" />
+                <element signature="e#12202#12203#0" expanded="true" />
+                <element signature="e#12380#12381#0" expanded="true" />
+                <element signature="e#12398#12399#0" expanded="true" />
+                <element signature="e#12579#12580#0" expanded="true" />
+                <element signature="e#12597#12598#0" expanded="true" />
+                <element signature="e#12771#12772#0" expanded="true" />
+                <element signature="e#12789#12790#0" expanded="true" />
+                <element signature="e#12974#12975#0" expanded="true" />
+                <element signature="e#12992#12993#0" expanded="true" />
+                <element signature="e#13137#13138#0" expanded="true" />
+                <element signature="e#13155#13156#0" expanded="true" />
+                <element signature="e#13321#13322#0" expanded="true" />
+                <element signature="e#13339#13340#0" expanded="true" />
+                <element signature="e#13480#13481#0" expanded="true" />
+                <element signature="e#13498#13499#0" expanded="true" />
+                <element signature="e#13660#13661#0" expanded="true" />
+                <element signature="e#13686#13687#0" expanded="true" />
+                <element signature="e#13883#13884#0" expanded="true" />
+                <element signature="e#13908#13909#0" expanded="true" />
+                <element signature="e#14139#14140#0" expanded="true" />
+                <element signature="e#14159#14160#0" expanded="true" />
+                <element signature="e#14384#14385#0" expanded="true" />
+                <element signature="e#14404#14405#0" expanded="true" />
+                <element signature="e#14649#14650#0" expanded="true" />
+                <element signature="e#14680#14681#0" expanded="true" />
+                <element signature="e#14929#14930#0" expanded="true" />
+                <element signature="e#14964#14965#0" expanded="true" />
+                <element signature="e#15380#15381#0" expanded="true" />
+                <element signature="e#15408#15409#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="V118.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V118.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="458" column="13" selection-start-line="458" selection-start-column="13" selection-end-line="458" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#10140#10141#0" expanded="true" />
+                <element signature="e#10158#10159#0" expanded="true" />
+                <element signature="e#11635#11636#0" expanded="true" />
+                <element signature="e#11653#11654#0" expanded="true" />
+                <element signature="e#11810#11811#0" expanded="true" />
+                <element signature="e#11828#11829#0" expanded="true" />
+                <element signature="e#12005#12006#0" expanded="true" />
+                <element signature="e#12023#12024#0" expanded="true" />
+                <element signature="e#12184#12185#0" expanded="true" />
+                <element signature="e#12202#12203#0" expanded="true" />
+                <element signature="e#12380#12381#0" expanded="true" />
+                <element signature="e#12398#12399#0" expanded="true" />
+                <element signature="e#12579#12580#0" expanded="true" />
+                <element signature="e#12597#12598#0" expanded="true" />
+                <element signature="e#12771#12772#0" expanded="true" />
+                <element signature="e#12789#12790#0" expanded="true" />
+                <element signature="e#12974#12975#0" expanded="true" />
+                <element signature="e#12992#12993#0" expanded="true" />
+                <element signature="e#13137#13138#0" expanded="true" />
+                <element signature="e#13155#13156#0" expanded="true" />
+                <element signature="e#13321#13322#0" expanded="true" />
+                <element signature="e#13339#13340#0" expanded="true" />
+                <element signature="e#13480#13481#0" expanded="true" />
+                <element signature="e#13498#13499#0" expanded="true" />
+                <element signature="e#13660#13661#0" expanded="true" />
+                <element signature="e#13686#13687#0" expanded="true" />
+                <element signature="e#13883#13884#0" expanded="true" />
+                <element signature="e#13908#13909#0" expanded="true" />
+                <element signature="e#14139#14140#0" expanded="true" />
+                <element signature="e#14159#14160#0" expanded="true" />
+                <element signature="e#14384#14385#0" expanded="true" />
+                <element signature="e#14404#14405#0" expanded="true" />
+                <element signature="e#14649#14650#0" expanded="true" />
+                <element signature="e#14680#14681#0" expanded="true" />
+                <element signature="e#14929#14930#0" expanded="true" />
+                <element signature="e#14964#14965#0" expanded="true" />
+                <element signature="e#15380#15381#0" expanded="true" />
+                <element signature="e#15408#15409#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,49 +262,105 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaMap.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <caret line="34" column="50" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#319#334#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DtaCharacteristics.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaCharacteristics.java">
+      <file leaf-file-name="DtaFileParser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/DtaFileParser.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="93" column="20" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="20" />
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="V117.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V117.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="500" column="5" selection-start-line="96" selection-start-column="0" selection-end-line="500" selection-end-column="5" />
               <folding>
-                <element signature="e#1305#1306#0" expanded="true" />
-                <element signature="e#1324#1325#0" expanded="true" />
-                <element signature="e#1368#1369#0" expanded="true" />
-                <element signature="e#1385#1386#0" expanded="true" />
-                <element signature="e#1428#1429#0" expanded="true" />
-                <element signature="e#1452#1453#0" expanded="true" />
-                <element signature="e#2025#2033#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#10141#10142#0" expanded="true" />
+                <element signature="e#10159#10160#0" expanded="true" />
+                <element signature="e#11636#11637#0" expanded="true" />
+                <element signature="e#11654#11655#0" expanded="true" />
+                <element signature="e#11811#11812#0" expanded="true" />
+                <element signature="e#11829#11830#0" expanded="true" />
+                <element signature="e#12006#12007#0" expanded="true" />
+                <element signature="e#12024#12025#0" expanded="true" />
+                <element signature="e#12185#12186#0" expanded="true" />
+                <element signature="e#12203#12204#0" expanded="true" />
+                <element signature="e#12381#12382#0" expanded="true" />
+                <element signature="e#12399#12400#0" expanded="true" />
+                <element signature="e#12580#12581#0" expanded="true" />
+                <element signature="e#12598#12599#0" expanded="true" />
+                <element signature="e#12772#12773#0" expanded="true" />
+                <element signature="e#12790#12791#0" expanded="true" />
+                <element signature="e#12975#12976#0" expanded="true" />
+                <element signature="e#12993#12994#0" expanded="true" />
+                <element signature="e#13138#13139#0" expanded="true" />
+                <element signature="e#13156#13157#0" expanded="true" />
+                <element signature="e#13322#13323#0" expanded="true" />
+                <element signature="e#13340#13341#0" expanded="true" />
+                <element signature="e#13481#13482#0" expanded="true" />
+                <element signature="e#13499#13500#0" expanded="true" />
+                <element signature="e#13661#13662#0" expanded="true" />
+                <element signature="e#13687#13688#0" expanded="true" />
+                <element signature="e#13884#13885#0" expanded="true" />
+                <element signature="e#13909#13910#0" expanded="true" />
+                <element signature="e#14140#14141#0" expanded="true" />
+                <element signature="e#14160#14161#0" expanded="true" />
+                <element signature="e#14385#14386#0" expanded="true" />
+                <element signature="e#14405#14406#0" expanded="true" />
+                <element signature="e#14650#14651#0" expanded="true" />
+                <element signature="e#14681#14682#0" expanded="true" />
+                <element signature="e#14930#14931#0" expanded="true" />
+                <element signature="e#14965#14966#0" expanded="true" />
+                <element signature="e#15381#15382#0" expanded="true" />
+                <element signature="e#15409#15410#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DtaSortOrder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaSortOrder.java">
+      <file leaf-file-name="FileVersion.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileVersion.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+              <caret line="57" column="61" selection-start-line="57" selection-start-column="61" selection-end-line="57" selection-end-column="61" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DtaDisplayFormats.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaDisplayFormats.java">
+      <file leaf-file-name="FileFormats.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileFormats.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
-              <folding />
+              <caret line="61" column="32" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Load.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/Load.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="32" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding>
+                <element signature="e#5512#5513#0" expanded="true" />
+                <element signature="e#5541#5542#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -156,7 +390,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/Stata118.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Header/ByteEnum.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Header/StataVersions.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Header/Header.java" />
@@ -178,35 +411,36 @@
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/DtaValueLabelTable.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/DtaFileParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/StataWithOutStrLs.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/DTA.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/DataTypes.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/StataWithStrLs.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/OldFormats.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/DtaVarTypes.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/StConvert.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/DtaVariableNames.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Writers/DTA.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Writers/FileElements/ElementTags.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/ElementTags.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaCharacteristic.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaMap.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/StataWithStrLs.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/Read.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/Load.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileFormats.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/DtaFileParser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V114.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V115.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V117.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V118.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V113.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileVersion.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaCharacteristics.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileConstants.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/NewFormats.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaData.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaVarTypes.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaCharacteristics.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Writers/DTA.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/DTA.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/StataByteOrder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/OldFormats.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/NewFormats.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/Load.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaMap.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileVersion.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileFormats.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/DtaFileParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V117.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V118.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V115.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V114.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V113.java" />
       </list>
     </option>
   </component>
@@ -237,8 +471,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="47" />
     <option name="y" value="23" />
-    <option name="width" value="1597" />
-    <option name="height" value="1045" />
+    <option name="width" value="1787" />
+    <option name="height" value="932" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -265,126 +499,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: org.paces-consulting:stata-java:0.0.1-SNAPSHOT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stata-java-0.0.1-SNAPSHOT.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Stata" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Variables" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: org.paces-consulting:stata-java:0.0.1-SNAPSHOT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stata-java-0.0.1-SNAPSHOT.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Stata" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: org.paces-consulting:stata-java:0.0.1-SNAPSHOT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stata-java-0.0.1-SNAPSHOT.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Stata" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Matrices" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: org.paces-consulting:stata-java:0.0.1-SNAPSHOT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stata-java-0.0.1-SNAPSHOT.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Stata" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataSets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: org.paces-consulting:stata-java:0.0.1-SNAPSHOT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stata-java-0.0.1-SNAPSHOT.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="dta" />
@@ -434,6 +553,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Stata" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -561,49 +706,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Stata" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Readers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DtaExceptions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.hocon.settings.HoconProjectSettingsConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="js.eslint.nodeInterpreter" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="eslint" />
@@ -998,13 +1106,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="47" y="23" width="1597" height="1045" extended-state="0" />
+    <frame x="47" y="23" width="1787" height="932" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897863" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Code explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35287958" sideWeight="0.50351495" order="7" side_tool="true" content_ui="tabs" />
@@ -1027,9 +1135,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35287958" sideWeight="0.49648505" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2681672" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23896848" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32670158" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25771973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Graphical Navigator" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1117,7 +1225,6 @@
           <caret line="3" column="60" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#319#334#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1133,7 +1240,6 @@
             <element signature="e#1385#1386#0" expanded="true" />
             <element signature="e#1428#1429#0" expanded="true" />
             <element signature="e#1452#1453#0" expanded="true" />
-            <element signature="e#2025#2033#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1161,12 +1267,13 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1452684134000" expanded="true" signature="486:713" placeholder="/**...*/" />
+            <element signature="e#5512#5513#0" expanded="true" />
+            <element signature="e#5541#5542#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Writers/DTA.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Writers/Write.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1204,7 +1311,6 @@
           <caret line="3" column="60" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#319#334#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1220,7 +1326,6 @@
             <element signature="e#1385#1386#0" expanded="true" />
             <element signature="e#1428#1429#0" expanded="true" />
             <element signature="e#1452#1453#0" expanded="true" />
-            <element signature="e#2025#2033#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1248,13 +1353,13 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
           <folding>
-            <element signature="e#1229#1230#0" expanded="true" />
-            <element signature="e#1266#1267#0" expanded="true" />
+            <element signature="e#1883#1884#0" expanded="false" />
+            <element signature="e#1920#1921#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Writers/DTA.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Writers/Write.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1293,7 +1398,6 @@
           <caret line="3" column="60" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#319#334#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1303,7 +1407,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
-            <marker date="1452684134000" expanded="true" signature="486:713" placeholder="/**...*/" />
+            <element signature="e#5512#5513#0" expanded="true" />
+            <element signature="e#5541#5542#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1312,7 +1417,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1331,30 +1438,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/StataByteOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3474576">
-          <caret line="53" column="71" selection-start-line="53" selection-start-column="51" selection-end-line="53" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Writers/DTA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="47" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/ElementTags.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="258" column="41" selection-start-line="258" selection-start-column="41" selection-end-line="258" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/StataWithStrLs.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1363,224 +1446,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/Load.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="61" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
-          <folding>
-            <marker date="1452684134000" expanded="true" signature="486:713" placeholder="/**...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/DtaFileParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V114.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="75" selection-start-line="33" selection-start-column="75" selection-end-line="33" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1959#1960#0" expanded="true" />
-            <element signature="e#1977#1978#0" expanded="true" />
-            <element signature="e#2026#2027#0" expanded="true" />
-            <element signature="e#2044#2045#0" expanded="true" />
-            <element signature="e#2098#2099#0" expanded="true" />
-            <element signature="e#2116#2117#0" expanded="true" />
-            <element signature="e#2167#2168#0" expanded="true" />
-            <element signature="e#2185#2186#0" expanded="true" />
-            <element signature="e#2237#2238#0" expanded="true" />
-            <element signature="e#2255#2256#0" expanded="true" />
-            <element signature="e#2307#2308#0" expanded="true" />
-            <element signature="e#2325#2326#0" expanded="true" />
-            <element signature="e#2373#2374#0" expanded="true" />
-            <element signature="e#2391#2392#0" expanded="true" />
-            <element signature="e#2453#2454#0" expanded="true" />
-            <element signature="e#2471#2472#0" expanded="true" />
-            <element signature="e#2519#2520#0" expanded="true" />
-            <element signature="e#2537#2538#0" expanded="true" />
-            <element signature="e#2596#2597#0" expanded="true" />
-            <element signature="e#2614#2615#0" expanded="true" />
-            <element signature="e#2678#2679#0" expanded="true" />
-            <element signature="e#2696#2697#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V115.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="75" selection-start-line="33" selection-start-column="75" selection-end-line="33" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1959#1960#0" expanded="true" />
-            <element signature="e#1977#1978#0" expanded="true" />
-            <element signature="e#2026#2027#0" expanded="true" />
-            <element signature="e#2044#2045#0" expanded="true" />
-            <element signature="e#2098#2099#0" expanded="true" />
-            <element signature="e#2116#2117#0" expanded="true" />
-            <element signature="e#2167#2168#0" expanded="true" />
-            <element signature="e#2185#2186#0" expanded="true" />
-            <element signature="e#2237#2238#0" expanded="true" />
-            <element signature="e#2255#2256#0" expanded="true" />
-            <element signature="e#2307#2308#0" expanded="true" />
-            <element signature="e#2325#2326#0" expanded="true" />
-            <element signature="e#2373#2374#0" expanded="true" />
-            <element signature="e#2391#2392#0" expanded="true" />
-            <element signature="e#2453#2454#0" expanded="true" />
-            <element signature="e#2471#2472#0" expanded="true" />
-            <element signature="e#2519#2520#0" expanded="true" />
-            <element signature="e#2537#2538#0" expanded="true" />
-            <element signature="e#2596#2597#0" expanded="true" />
-            <element signature="e#2614#2615#0" expanded="true" />
-            <element signature="e#2678#2679#0" expanded="true" />
-            <element signature="e#2696#2697#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V117.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="75" selection-start-line="34" selection-start-column="75" selection-end-line="34" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1994#1995#0" expanded="true" />
-            <element signature="e#2012#2013#0" expanded="true" />
-            <element signature="e#2061#2062#0" expanded="true" />
-            <element signature="e#2079#2080#0" expanded="true" />
-            <element signature="e#2133#2134#0" expanded="true" />
-            <element signature="e#2151#2152#0" expanded="true" />
-            <element signature="e#2202#2203#0" expanded="true" />
-            <element signature="e#2220#2221#0" expanded="true" />
-            <element signature="e#2272#2273#0" expanded="true" />
-            <element signature="e#2290#2291#0" expanded="true" />
-            <element signature="e#2342#2343#0" expanded="true" />
-            <element signature="e#2360#2361#0" expanded="true" />
-            <element signature="e#2408#2409#0" expanded="true" />
-            <element signature="e#2426#2427#0" expanded="true" />
-            <element signature="e#2488#2489#0" expanded="true" />
-            <element signature="e#2506#2507#0" expanded="true" />
-            <element signature="e#2554#2555#0" expanded="true" />
-            <element signature="e#2572#2573#0" expanded="true" />
-            <element signature="e#2631#2632#0" expanded="true" />
-            <element signature="e#2649#2650#0" expanded="true" />
-            <element signature="e#2713#2714#0" expanded="true" />
-            <element signature="e#2731#2732#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/OldFormats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaVariableNames.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.720339">
           <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/NewFormats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48305085">
-          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
-          <folding>
-            <element signature="e#1229#1230#0" expanded="true" />
-            <element signature="e#1266#1267#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileFormats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38135594">
-          <caret line="15" column="58" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V118.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7881356">
-          <caret line="35" column="75" selection-start-line="35" selection-start-column="75" selection-end-line="35" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1995#1996#0" expanded="true" />
-            <element signature="e#2013#2014#0" expanded="true" />
-            <element signature="e#2062#2063#0" expanded="true" />
-            <element signature="e#2080#2081#0" expanded="true" />
-            <element signature="e#2134#2135#0" expanded="true" />
-            <element signature="e#2152#2153#0" expanded="true" />
-            <element signature="e#2203#2204#0" expanded="true" />
-            <element signature="e#2221#2222#0" expanded="true" />
-            <element signature="e#2273#2274#0" expanded="true" />
-            <element signature="e#2291#2292#0" expanded="true" />
-            <element signature="e#2343#2344#0" expanded="true" />
-            <element signature="e#2361#2362#0" expanded="true" />
-            <element signature="e#2409#2410#0" expanded="true" />
-            <element signature="e#2427#2428#0" expanded="true" />
-            <element signature="e#2489#2490#0" expanded="true" />
-            <element signature="e#2507#2508#0" expanded="true" />
-            <element signature="e#2555#2556#0" expanded="true" />
-            <element signature="e#2573#2574#0" expanded="true" />
-            <element signature="e#2632#2633#0" expanded="true" />
-            <element signature="e#2650#2651#0" expanded="true" />
-            <element signature="e#2714#2715#0" expanded="true" />
-            <element signature="e#2732#2733#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/StConvert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2542373">
-          <caret line="18" column="49" selection-start-line="13" selection-start-column="8" selection-end-line="18" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileVersion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaVarTypes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="79" column="82" selection-start-line="79" selection-start-column="82" selection-end-line="79" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V113.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1595,7 +1464,6 @@
             <element signature="e#1385#1386#0" expanded="true" />
             <element signature="e#1428#1429#0" expanded="true" />
             <element signature="e#1452#1453#0" expanded="true" />
-            <element signature="e#2025#2033#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1608,17 +1476,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#319#334#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaDisplayFormats.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1627,12 +1484,374 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6097561">
-          <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="15" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaVarTypes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/StConvert.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="49" selection-start-line="13" selection-start-column="8" selection-end-line="18" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/ElementTags.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="484" column="30" selection-start-line="484" selection-start-column="20" selection-end-line="484" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Writers/Write.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/DTA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+          <folding>
+            <element signature="e#262#263#0" expanded="true" />
+            <element signature="e#300#301#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/StataByteOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="146" column="54" selection-start-line="146" selection-start-column="54" selection-end-line="146" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/OldFormats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="142" column="67" selection-start-line="142" selection-start-column="67" selection-end-line="142" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/NewFormats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="203" column="56" selection-start-line="203" selection-start-column="56" selection-end-line="203" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/Load.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="e#5512#5513#0" expanded="true" />
+            <element signature="e#5541#5542#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="50" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileVersion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="61" selection-start-line="57" selection-start-column="61" selection-end-line="57" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/DtaFileParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileFormats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="61" column="32" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V117.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="500" column="5" selection-start-line="96" selection-start-column="0" selection-end-line="500" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#10141#10142#0" expanded="true" />
+            <element signature="e#10159#10160#0" expanded="true" />
+            <element signature="e#11636#11637#0" expanded="true" />
+            <element signature="e#11654#11655#0" expanded="true" />
+            <element signature="e#11811#11812#0" expanded="true" />
+            <element signature="e#11829#11830#0" expanded="true" />
+            <element signature="e#12006#12007#0" expanded="true" />
+            <element signature="e#12024#12025#0" expanded="true" />
+            <element signature="e#12185#12186#0" expanded="true" />
+            <element signature="e#12203#12204#0" expanded="true" />
+            <element signature="e#12381#12382#0" expanded="true" />
+            <element signature="e#12399#12400#0" expanded="true" />
+            <element signature="e#12580#12581#0" expanded="true" />
+            <element signature="e#12598#12599#0" expanded="true" />
+            <element signature="e#12772#12773#0" expanded="true" />
+            <element signature="e#12790#12791#0" expanded="true" />
+            <element signature="e#12975#12976#0" expanded="true" />
+            <element signature="e#12993#12994#0" expanded="true" />
+            <element signature="e#13138#13139#0" expanded="true" />
+            <element signature="e#13156#13157#0" expanded="true" />
+            <element signature="e#13322#13323#0" expanded="true" />
+            <element signature="e#13340#13341#0" expanded="true" />
+            <element signature="e#13481#13482#0" expanded="true" />
+            <element signature="e#13499#13500#0" expanded="true" />
+            <element signature="e#13661#13662#0" expanded="true" />
+            <element signature="e#13687#13688#0" expanded="true" />
+            <element signature="e#13884#13885#0" expanded="true" />
+            <element signature="e#13909#13910#0" expanded="true" />
+            <element signature="e#14140#14141#0" expanded="true" />
+            <element signature="e#14160#14161#0" expanded="true" />
+            <element signature="e#14385#14386#0" expanded="true" />
+            <element signature="e#14405#14406#0" expanded="true" />
+            <element signature="e#14650#14651#0" expanded="true" />
+            <element signature="e#14681#14682#0" expanded="true" />
+            <element signature="e#14930#14931#0" expanded="true" />
+            <element signature="e#14965#14966#0" expanded="true" />
+            <element signature="e#15381#15382#0" expanded="true" />
+            <element signature="e#15409#15410#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V118.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="458" column="13" selection-start-line="458" selection-start-column="13" selection-end-line="458" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#10140#10141#0" expanded="true" />
+            <element signature="e#10158#10159#0" expanded="true" />
+            <element signature="e#11635#11636#0" expanded="true" />
+            <element signature="e#11653#11654#0" expanded="true" />
+            <element signature="e#11810#11811#0" expanded="true" />
+            <element signature="e#11828#11829#0" expanded="true" />
+            <element signature="e#12005#12006#0" expanded="true" />
+            <element signature="e#12023#12024#0" expanded="true" />
+            <element signature="e#12184#12185#0" expanded="true" />
+            <element signature="e#12202#12203#0" expanded="true" />
+            <element signature="e#12380#12381#0" expanded="true" />
+            <element signature="e#12398#12399#0" expanded="true" />
+            <element signature="e#12579#12580#0" expanded="true" />
+            <element signature="e#12597#12598#0" expanded="true" />
+            <element signature="e#12771#12772#0" expanded="true" />
+            <element signature="e#12789#12790#0" expanded="true" />
+            <element signature="e#12974#12975#0" expanded="true" />
+            <element signature="e#12992#12993#0" expanded="true" />
+            <element signature="e#13137#13138#0" expanded="true" />
+            <element signature="e#13155#13156#0" expanded="true" />
+            <element signature="e#13321#13322#0" expanded="true" />
+            <element signature="e#13339#13340#0" expanded="true" />
+            <element signature="e#13480#13481#0" expanded="true" />
+            <element signature="e#13498#13499#0" expanded="true" />
+            <element signature="e#13660#13661#0" expanded="true" />
+            <element signature="e#13686#13687#0" expanded="true" />
+            <element signature="e#13883#13884#0" expanded="true" />
+            <element signature="e#13908#13909#0" expanded="true" />
+            <element signature="e#14139#14140#0" expanded="true" />
+            <element signature="e#14159#14160#0" expanded="true" />
+            <element signature="e#14384#14385#0" expanded="true" />
+            <element signature="e#14404#14405#0" expanded="true" />
+            <element signature="e#14649#14650#0" expanded="true" />
+            <element signature="e#14680#14681#0" expanded="true" />
+            <element signature="e#14929#14930#0" expanded="true" />
+            <element signature="e#14964#14965#0" expanded="true" />
+            <element signature="e#15380#15381#0" expanded="true" />
+            <element signature="e#15408#15409#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V115.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="499" column="5" selection-start-line="499" selection-start-column="5" selection-end-line="499" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#10140#10141#0" expanded="true" />
+            <element signature="e#10158#10159#0" expanded="true" />
+            <element signature="e#11635#11636#0" expanded="true" />
+            <element signature="e#11653#11654#0" expanded="true" />
+            <element signature="e#11810#11811#0" expanded="true" />
+            <element signature="e#11828#11829#0" expanded="true" />
+            <element signature="e#12005#12006#0" expanded="true" />
+            <element signature="e#12023#12024#0" expanded="true" />
+            <element signature="e#12184#12185#0" expanded="true" />
+            <element signature="e#12202#12203#0" expanded="true" />
+            <element signature="e#12380#12381#0" expanded="true" />
+            <element signature="e#12398#12399#0" expanded="true" />
+            <element signature="e#12579#12580#0" expanded="true" />
+            <element signature="e#12597#12598#0" expanded="true" />
+            <element signature="e#12771#12772#0" expanded="true" />
+            <element signature="e#12789#12790#0" expanded="true" />
+            <element signature="e#12974#12975#0" expanded="true" />
+            <element signature="e#12992#12993#0" expanded="true" />
+            <element signature="e#13137#13138#0" expanded="true" />
+            <element signature="e#13155#13156#0" expanded="true" />
+            <element signature="e#13321#13322#0" expanded="true" />
+            <element signature="e#13339#13340#0" expanded="true" />
+            <element signature="e#13480#13481#0" expanded="true" />
+            <element signature="e#13498#13499#0" expanded="true" />
+            <element signature="e#13660#13661#0" expanded="true" />
+            <element signature="e#13686#13687#0" expanded="true" />
+            <element signature="e#13883#13884#0" expanded="true" />
+            <element signature="e#13908#13909#0" expanded="true" />
+            <element signature="e#14139#14140#0" expanded="true" />
+            <element signature="e#14159#14160#0" expanded="true" />
+            <element signature="e#14384#14385#0" expanded="true" />
+            <element signature="e#14404#14405#0" expanded="true" />
+            <element signature="e#14649#14650#0" expanded="true" />
+            <element signature="e#14680#14681#0" expanded="true" />
+            <element signature="e#14929#14930#0" expanded="true" />
+            <element signature="e#14964#14965#0" expanded="true" />
+            <element signature="e#15380#15381#0" expanded="true" />
+            <element signature="e#15408#15409#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V114.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="499" column="5" selection-start-line="499" selection-start-column="5" selection-end-line="499" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#10140#10141#0" expanded="true" />
+            <element signature="e#10158#10159#0" expanded="true" />
+            <element signature="e#11635#11636#0" expanded="true" />
+            <element signature="e#11653#11654#0" expanded="true" />
+            <element signature="e#11810#11811#0" expanded="true" />
+            <element signature="e#11828#11829#0" expanded="true" />
+            <element signature="e#12005#12006#0" expanded="true" />
+            <element signature="e#12023#12024#0" expanded="true" />
+            <element signature="e#12184#12185#0" expanded="true" />
+            <element signature="e#12202#12203#0" expanded="true" />
+            <element signature="e#12380#12381#0" expanded="true" />
+            <element signature="e#12398#12399#0" expanded="true" />
+            <element signature="e#12579#12580#0" expanded="true" />
+            <element signature="e#12597#12598#0" expanded="true" />
+            <element signature="e#12771#12772#0" expanded="true" />
+            <element signature="e#12789#12790#0" expanded="true" />
+            <element signature="e#12974#12975#0" expanded="true" />
+            <element signature="e#12992#12993#0" expanded="true" />
+            <element signature="e#13137#13138#0" expanded="true" />
+            <element signature="e#13155#13156#0" expanded="true" />
+            <element signature="e#13321#13322#0" expanded="true" />
+            <element signature="e#13339#13340#0" expanded="true" />
+            <element signature="e#13480#13481#0" expanded="true" />
+            <element signature="e#13498#13499#0" expanded="true" />
+            <element signature="e#13660#13661#0" expanded="true" />
+            <element signature="e#13686#13687#0" expanded="true" />
+            <element signature="e#13883#13884#0" expanded="true" />
+            <element signature="e#13908#13909#0" expanded="true" />
+            <element signature="e#14139#14140#0" expanded="true" />
+            <element signature="e#14159#14160#0" expanded="true" />
+            <element signature="e#14384#14385#0" expanded="true" />
+            <element signature="e#14404#14405#0" expanded="true" />
+            <element signature="e#14649#14650#0" expanded="true" />
+            <element signature="e#14680#14681#0" expanded="true" />
+            <element signature="e#14929#14930#0" expanded="true" />
+            <element signature="e#14964#14965#0" expanded="true" />
+            <element signature="e#15380#15381#0" expanded="true" />
+            <element signature="e#15408#15409#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V113.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="7.9802957">
+          <caret line="499" column="5" selection-start-line="499" selection-start-column="5" selection-end-line="499" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#10140#10141#0" expanded="true" />
+            <element signature="e#10158#10159#0" expanded="true" />
+            <element signature="e#11635#11636#0" expanded="true" />
+            <element signature="e#11653#11654#0" expanded="true" />
+            <element signature="e#11810#11811#0" expanded="true" />
+            <element signature="e#11828#11829#0" expanded="true" />
+            <element signature="e#12005#12006#0" expanded="true" />
+            <element signature="e#12023#12024#0" expanded="true" />
+            <element signature="e#12184#12185#0" expanded="true" />
+            <element signature="e#12202#12203#0" expanded="true" />
+            <element signature="e#12380#12381#0" expanded="true" />
+            <element signature="e#12398#12399#0" expanded="true" />
+            <element signature="e#12579#12580#0" expanded="true" />
+            <element signature="e#12597#12598#0" expanded="true" />
+            <element signature="e#12771#12772#0" expanded="true" />
+            <element signature="e#12789#12790#0" expanded="true" />
+            <element signature="e#12974#12975#0" expanded="true" />
+            <element signature="e#12992#12993#0" expanded="true" />
+            <element signature="e#13137#13138#0" expanded="true" />
+            <element signature="e#13155#13156#0" expanded="true" />
+            <element signature="e#13321#13322#0" expanded="true" />
+            <element signature="e#13339#13340#0" expanded="true" />
+            <element signature="e#13480#13481#0" expanded="true" />
+            <element signature="e#13498#13499#0" expanded="true" />
+            <element signature="e#13660#13661#0" expanded="true" />
+            <element signature="e#13686#13687#0" expanded="true" />
+            <element signature="e#13883#13884#0" expanded="true" />
+            <element signature="e#13908#13909#0" expanded="true" />
+            <element signature="e#14139#14140#0" expanded="true" />
+            <element signature="e#14159#14160#0" expanded="true" />
+            <element signature="e#14384#14385#0" expanded="true" />
+            <element signature="e#14404#14405#0" expanded="true" />
+            <element signature="e#14649#14650#0" expanded="true" />
+            <element signature="e#14680#14681#0" expanded="true" />
+            <element signature="e#14929#14930#0" expanded="true" />
+            <element signature="e#14964#14965#0" expanded="true" />
+            <element signature="e#15380#15381#0" expanded="true" />
+            <element signature="e#15408#15409#0" expanded="true" />
           </folding>
         </state>
       </provider>
