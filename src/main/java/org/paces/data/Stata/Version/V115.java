@@ -420,6 +420,28 @@ public class V115 extends OldFormats implements FileVersion, DtaFileParser {
 	}
 
 	/**
+	 * Method used to retrieve the swapto member of the StataByteOrder class
+	 *
+	 * @return A ByteOrder variable used to define the order in which the bytes
+	 * from the .dta file should be read.
+	 */
+	@Override
+	public ByteOrder getByteSwap() {
+		return this.sbo.swapto;
+	}
+
+	/**
+	 * Method used to access the byte representation of the .dta file being
+	 * read
+	 *
+	 * @return A RandomAccessFile object representing the .dta file
+	 */
+	@Override
+	public RandomAccessFile getDtaFile() {
+		return this.dataset;
+	}
+
+	/**
 	 * Method used to retrieve the version number
 	 *
 	 * @return The integer value of the release number

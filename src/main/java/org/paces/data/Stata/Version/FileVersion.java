@@ -1,11 +1,27 @@
 package org.paces.data.Stata.Version;
 
+import java.io.RandomAccessFile;
+import java.nio.ByteOrder;
+
 /**
  * Interface used to construct file version objects
  * @author Billy Buchanan
  * @version 0.0.0
  */
 public abstract interface FileVersion<T> {
+
+	/**
+	 * Method used to retrieve the swapto member of the StataByteOrder class
+	 * @return A ByteOrder variable used to define the order in which the
+	 * bytes from the .dta file should be read.
+	 */
+	public ByteOrder getByteSwap();
+
+	/**
+	 * Method used to access the byte representation of the .dta file being read
+	 * @return A RandomAccessFile object representing the .dta file
+	 */
+	public RandomAccessFile getDtaFile();
 
 	/**
 	 * Method used to retrieve the version number
