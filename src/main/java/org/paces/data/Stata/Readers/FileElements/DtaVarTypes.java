@@ -1,10 +1,8 @@
 package org.paces.data.Stata.Readers.FileElements;
 
-import org.paces.data.Stata.Readers.StConvert;
 import org.paces.data.Stata.Version.FileVersion;
 
-import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentSkipListMap;
@@ -16,95 +14,40 @@ public class DtaVarTypes {
 
 	private List<Integer> stVariableTypes = new ArrayList<>();
 
-	private FileVersion version = null;
-
-	private List<Integer> reserveBytes = new ArrayList<>();
-
-	protected ConcurrentSkipListMap<Integer, Integer> stmap = new
-			ConcurrentSkipListMap<Integer, Integer>();
-
-	private RandomAccessFile x;
+	protected ConcurrentSkipListMap<Integer, Integer> stmap = new ConcurrentSkipListMap<>();
+	protected ConcurrentSkipListMap<Integer, String> stDispatcher = new ConcurrentSkipListMap<>();
 
 	protected String[] missings = {".", ".a", ".b", ".c", ".d", ".e", ".f", ".g",
 			".h", ".i", ".j", ".k", ".l", ".m", ".n", ".o", ".p", ".q", ".r",
 			".s", ".t", ".u", ".v", ".w", ".x", ".y", ".z"};
 
-
-	DtaVarTypes(FileVersion<?> stdata, Long offset, Integer nvars) {
-		RandomAccessFile x = stdata.getDtaFile();
-
-		try {
-
-			x.seek(offset);
-
-			for (int i = 0; i < nvars; i++) {
-
-				byte[] stvartypes = getContainer(stdata.getVersionNumber());
-
-				x.read(stvartypes);
-
-				stVariableTypes.add(i, StConvert.toStata(stvartypes, stdata.getByteSwap(), 0));
-
-			}
-
-		} catch (IOException e) {
-
-			e.printStackTrace();
-
+	DtaVarTypes(FileVersion<?> data, Integer offset) {
+		if (data.getVersionNumber() >= 117) {
+			setNewTypes();
+			DtaVarTypesNew(data.getDtaFile(), offset, data.getNumVars());
+		} else {
+			setOldTypes();
+			DtaVarTypesOld(data.getDtaFile(), offset, data.getNumVars());
 		}
+	}
 
+	public void DtaVarTypesNew(ByteBuffer stdata, Integer offset, Short nvars) {
+		stdata.position(offset);
+		for (int i = 0; i < nvars; i++) {
+			stVariableTypes.add(i, (int) stdata.getShort());
+		}
+	}
+
+	public void DtaVarTypesOld(ByteBuffer stdata, Integer offset, Short nvars) {
+		stdata.position(offset);
+		for (int i = 0; i < nvars; i++) {
+			stVariableTypes.add(i, (int) stdata.get());
+		}
 	}
 
 	public List<Integer> getVariableTypes() {
 		return this.stVariableTypes;
 	}
-
-	public byte[] getContainer(Integer version) {
-		switch (version) {
-			case 117:
-			case 118: {
-				return new byte[2];
-			}
-			default:
-				return new byte[1];
-		}
-	}
-
-	/**
-	 * Method to handle dispatch of constructing the variable type map object
-	 * @param version The .dta file release version number
-	 */
-	public void setTypes(Integer version) {
-
-		// Switch statement on version number
-		switch (version) {
-
-			// For files created by Stata 13-14
-			case 117:
-			case 118: {
-
-				// Call the setNewType method which includes support for
-				// strings up to 2045 bytes in length and strLs
-				setNewTypes();
-
-				// Break out of the statement
-				break;
-
-			} // End Cases for files created by Stata 13/14
-
-			// For files created by earlier version of Stata
-			default:
-
-				// Call the setOldTypes method which supports strings up to
-				// 244 bytes in length
-				setOldTypes();
-
-				// Break out of the statement
-				break;
-
-		} // End Switch block
-
-	} // End method declaration
 
 	/**
 	 * Method to generate map from variable types to the number of bytes
@@ -113,12 +56,18 @@ public class DtaVarTypes {
 	public void setOldTypes() {
 		for (Integer i = 1; i < 245; i++) {
 			this.stmap.put(i, i);
+			this.stDispatcher.put(i, "asCharBuffer().allocate(" + String.valueOf(i) + ").get");
 		}
 		this.stmap.put(251, 1);
 		this.stmap.put(252, 2);
 		this.stmap.put(253, 4);
 		this.stmap.put(254, 4);
 		this.stmap.put(255, 8);
+		this.stDispatcher.put(251, "get");
+		this.stDispatcher.put(252, "getShort");
+		this.stDispatcher.put(253, "getInt");
+		this.stDispatcher.put(254, "getFloat");
+		this.stDispatcher.put(255, "getDouble");
 
 	}
 
@@ -130,6 +79,7 @@ public class DtaVarTypes {
 	public void setNewTypes() {
 		for (Integer i = 1; i < 2046; i++) {
 			this.stmap.put(i, i);
+			this.stDispatcher.put(i, "asCharBuffer().allocate(" + String.valueOf(i) + ").get");
 		}
 		stmap.put(65526, 8);
 		stmap.put(65527, 4);
@@ -137,6 +87,12 @@ public class DtaVarTypes {
 		stmap.put(65529, 2);
 		stmap.put(65530, 1);
 		stmap.put(32768, 0);
+		this.stDispatcher.put(65526, "getDouble");
+		this.stDispatcher.put(65527, "getFloat");
+		this.stDispatcher.put(65528, "getInt");
+		this.stDispatcher.put(65529, "getShort");
+		this.stDispatcher.put(65530, "get");
+		this.stDispatcher.put(32768, "asCharBuffer");
 
 	}
 

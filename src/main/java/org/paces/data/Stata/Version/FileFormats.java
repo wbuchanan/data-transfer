@@ -1,7 +1,7 @@
 package org.paces.data.Stata.Version;
 
-import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.nio.channels.FileChannel;
 
 /**
  * Class used to initialize readers for specific file formats
@@ -25,7 +25,7 @@ public class FileFormats {
 	 * @param mapOffset The offset to the start of the file map
 	 * @return A File version object of the type specified
 	 */
-	public static FileVersion<?> getVersion(ByteBuffer stdata,
+	public static FileVersion<?> getVersion(FileChannel stdata,
 											Integer release,
 											ByteOrder endian,
 											Short K,
@@ -70,7 +70,7 @@ public class FileFormats {
 	 * @param mapOffset The offset to the start of the file map
 	 * @return A File version object of the type specified
 	 */
-	public static V118 getVersion(ByteBuffer stdata,
+	public static V118 getVersion(FileChannel stdata,
 								  Integer release,
 								  ByteOrder endian,
 								  Short K,

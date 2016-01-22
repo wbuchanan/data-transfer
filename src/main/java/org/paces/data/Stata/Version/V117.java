@@ -3,8 +3,8 @@ package org.paces.data.Stata.Version;
 import org.paces.data.Stata.Readers.DtaFileParser;
 import org.paces.data.Stata.Readers.FileElements.*;
 
-import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.nio.channels.FileChannel;
 
 /**
  * @author Billy Buchanan
@@ -13,10 +13,10 @@ import java.nio.ByteOrder;
 public class V117 extends NewFormats implements FileVersion, DtaFileParser {
 
 	/**
-	 * Member containing the ByteBuffer class object used to read the
+	 * Member containing the FileChannel class object used to read the
 	 * bytes from the .dta file.
 	 */
-	private ByteBuffer dataset;
+	private FileChannel dataset;
 
 	/**
 	 * Member containing the release/version number of the file
@@ -57,7 +57,7 @@ public class V117 extends NewFormats implements FileVersion, DtaFileParser {
 	 * Class constructor for .dta file type 117.
 	 * The class is constructed by the .getVersion method of the FileFormats
 	 * class
-	 * @param stdata A ByteBuffer object used to parse/read the bytes
+	 * @param stdata A FileChannel object used to parse/read the bytes
 	 *                  from the .dta file
 	 * @param release The release number of the file
 	 * @param endian The endianness the file was written with
@@ -69,7 +69,7 @@ public class V117 extends NewFormats implements FileVersion, DtaFileParser {
 	 *                     begins
 	 * @see org.paces.data.Stata.Version.FileFormats
 	 */
-	public V117(ByteBuffer stdata, Integer release, ByteOrder endian,
+	public V117(FileChannel stdata, Integer release, ByteOrder endian,
 				Short K, Integer N, String datasetLabel, String datasetTimeStamp,
 				Integer mapOffset) {
 
@@ -426,10 +426,10 @@ public class V117 extends NewFormats implements FileVersion, DtaFileParser {
 	 * Method used to access the byte representation of the .dta file being
 	 * read
 	 *
-	 * @return A ByteBuffer object representing the .dta file
+	 * @return A FileChannel object representing the .dta file
 	 */
 	@Override
-	public ByteBuffer getDtaFile() {
+	public FileChannel getDtaFile() {
 		return this.dataset;
 	}
 

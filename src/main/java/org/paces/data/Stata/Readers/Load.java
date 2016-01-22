@@ -23,6 +23,7 @@ import java.util.List;
 public class Load {
 
 
+	protected FileChannel sfMap;
 	protected MappedByteBuffer stataFile;
 	protected List<byte[]> fileHeader;
 	protected List<Object> headerData;
@@ -45,8 +46,8 @@ public class Load {
 
 		try {
 			RandomAccessFile raf = new RandomAccessFile(new File(args[0]), "rw");
-			FileChannel fc = raf.getChannel();
-			this.stataFile = fc.map(FileChannel.MapMode.READ_WRITE, 0, fc.size());
+			this.sfMap = raf.getChannel();
+			this.stataFile = sfMap.map(FileChannel.MapMode.READ_WRITE, 0, sfMap.size());
 			this.fileHeader = checkVersion(this.stataFile);
 			if (this.release >= 113 && this.release <= 115) {
 				this.headerData = OldFormats.readHeader(stataFile, fileHeader);

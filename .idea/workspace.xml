@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a55b64e-6321-4376-8dfd-3a19445497d5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaMap.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaMap.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaVarTypes.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaVarTypes.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/Load.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/Load.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileFormats.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileFormats.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileVersion.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileVersion.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/NewFormats.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/NewFormats.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/OldFormats.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/OldFormats.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V113.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V113.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V114.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V114.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V115.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V115.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V117.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V117.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V118.java" afterPath="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V118.java" />
     </list>
     <ignored path="dta.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,11 +41,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Load.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DtaMap.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaMap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.27518427">
+              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Load.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/Load.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0130354">
-              <caret line="204" column="31" selection-start-line="204" selection-start-column="31" selection-end-line="204" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -69,6 +71,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="DtaVarTypes.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaVarTypes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="V113.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V113.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -79,20 +91,6 @@
                 <element signature="e#13715#13716#0" expanded="true" />
                 <element signature="e#14367#14368#0" expanded="true" />
                 <element signature="e#14387#14388#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="V114.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V114.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#14349#14350#0" expanded="true" />
-                <element signature="e#14369#14370#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -225,8 +223,6 @@
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/DtaFileParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaVariableNames.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaCharacteristics.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaMap.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaVarTypes.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileFormats.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileVersion.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V114.java" />
@@ -237,6 +233,8 @@
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/NewFormats.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/OldFormats.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/Load.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaVarTypes.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaMap.java" />
       </list>
     </option>
   </component>
@@ -928,10 +926,10 @@
       <window_info id="TypeScript Compiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32897863" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897863" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35154393" sideWeight="0.49648505" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23896848" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23896848" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Graphical Navigator" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1319,22 +1317,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaVarTypes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="35" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileVersion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1351,19 +1333,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#14349#14350#0" expanded="true" />
             <element signature="e#14369#14370#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V113.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="72" column="64" selection-start-line="72" selection-start-column="64" selection-end-line="72" selection-end-column="64" />
-          <folding>
-            <element signature="e#13689#13690#0" expanded="true" />
-            <element signature="e#13715#13716#0" expanded="true" />
-            <element signature="e#14367#14368#0" expanded="true" />
-            <element signature="e#14387#14388#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1403,14 +1372,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileFormats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="67" selection-start-line="20" selection-start-column="67" selection-end-line="20" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/StataByteOrder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.03685504">
@@ -1437,10 +1398,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/FileFormats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="67" selection-start-line="20" selection-start-column="67" selection-end-line="20" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/Load.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0130354">
-          <caret line="204" column="31" selection-start-line="204" selection-start-column="31" selection-end-line="204" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Version/V113.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="64" selection-start-line="72" selection-start-column="64" selection-end-line="72" selection-end-column="64" />
+          <folding>
+            <element signature="e#13689#13690#0" expanded="true" />
+            <element signature="e#13715#13716#0" expanded="true" />
+            <element signature="e#14367#14368#0" expanded="true" />
+            <element signature="e#14387#14388#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaVarTypes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/data/Stata/Readers/FileElements/DtaMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.27518427">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
         </state>
       </provider>

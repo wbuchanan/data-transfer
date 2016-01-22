@@ -3,8 +3,8 @@ package org.paces.data.Stata.Version;
 import org.paces.data.Stata.Readers.DtaFileParser;
 import org.paces.data.Stata.Readers.FileElements.*;
 
-import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.nio.channels.FileChannel;
 
 /**
  * @author Billy Buchanan
@@ -16,7 +16,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 * Member containing the RandomAccessFile class object used to read the
 	 * bytes from the .dta file.
 	 */
-	private ByteBuffer dataset;
+	private FileChannel dataset;
 
 	/**
 	 * Member containing the release/version number of the file
@@ -69,7 +69,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 *                     begins
 	 * @see org.paces.data.Stata.Version.FileFormats
 	 */
-	public V113(ByteBuffer stdata, Integer release, ByteOrder endian,
+	public V113(FileChannel stdata, Integer release, ByteOrder endian,
 				Short K, Integer N, String datasetLabel, String datasetTimeStamp,
 				Integer mapOffset) {
 
@@ -428,7 +428,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 * @return A RandomAccessFile object representing the .dta file
 	 */
 	@Override
-	public ByteBuffer getDtaFile() {
+	public FileChannel getDtaFile() {
 		return this.dataset;
 	}
 

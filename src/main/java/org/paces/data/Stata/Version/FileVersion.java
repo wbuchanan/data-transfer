@@ -1,7 +1,7 @@
 package org.paces.data.Stata.Version;
 
-import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.nio.channels.FileChannel;
 
 /**
  * Interface used to construct file version objects
@@ -21,7 +21,7 @@ public abstract interface FileVersion<T> {
 	 * Method used to access the byte representation of the .dta file being read
 	 * @return A RandomAccessFile object representing the .dta file
 	 */
-	public ByteBuffer getDtaFile();
+	public FileChannel getDtaFile();
 
 	/**
 	 * Method used to retrieve the version number

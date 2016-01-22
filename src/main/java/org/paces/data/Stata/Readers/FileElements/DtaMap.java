@@ -3,7 +3,6 @@ package org.paces.data.Stata.Readers.FileElements;
 import org.paces.data.Stata.Version.*;
 
 import java.io.IOException;
-import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,9 +16,9 @@ import java.util.Map;
  */
 public class DtaMap {
 
-	protected Map<Integer, Long> stmap = new HashMap<>();
+	protected Map<Integer, Integer> stmap = new HashMap<>();
 	private final ElementTags etags = new ElementTags();
-	protected List<Long> offsetMods = new ArrayList<>();
+	protected List<Integer> offsetMods = new ArrayList<>();
 	protected List<Long> offsets = new ArrayList<>();
 
 	DtaMap(V113 stata, Long mapOffset, Short nvars) {
@@ -45,10 +44,6 @@ public class DtaMap {
 
 	DtaMap(FileVersion<?> file, Long mapPosition, Short nvars) {
 
-	}
-
-	DtaMap(FileVersion<?> file, Long mapPosition) throws IOException {
-		setNewOffsets(file, mapPosition);
 	}
 
 	public void setOffsets(V113 file, Long mapPosition, Short variables) throws IOException {
@@ -89,8 +84,6 @@ public class DtaMap {
 		// Need to read characteristics to determine the length of this field
 		DtaCharacteristics tmp = new DtaCharacteristics(ftype, offsets.get(8));
 		offsets.add(9, tmp.getEndPosition());
-
-
 	}
 
 	/**
@@ -100,49 +93,29 @@ public class DtaMap {
 	 * @throws IOException An exception thrown if there are any issues
 	 * reading the data from the file.
 	 */
-	public void setNewOffsets(FileVersion<?> ftype, Long mapLocation) throws
+	public void setNewOffsets(FileVersion<?> ftype, Integer mapLocation) throws
 			IOException {
-		offsetMods.add(0, (long) 0);
-		offsetMods.add(1, (long) ElementTags.getTagValue("omap"));
-		offsetMods.add(2, (long) ElementTags.getTagValue("ovartypes"));
-		offsetMods.add(3, (long) ElementTags.getTagValue("ovarnames"));
-		offsetMods.add(4, (long) ElementTags.getTagValue("osortorder"));
-		offsetMods.add(5, (long) ElementTags.getTagValue("odifmt"));
-		offsetMods.add(6, (long) ElementTags.getTagValue("ovallabname"));
-		offsetMods.add(7, (long) ElementTags.getTagValue("ovarlab"));
-		offsetMods.add(8, (long) ElementTags.getTagValue("ocharacteristics"));
-		offsetMods.add(9, (long) ElementTags.getTagValue("odata"));
-		offsetMods.add(10, (long) ElementTags.getTagValue("ostrls"));
-		offsetMods.add(11, (long) ElementTags.getTagValue("ovallabels"));
-		offsetMods.add(12, (long) 0);
-		offsetMods.add(13, (long) 0);
-		RandomAccessFile x = ftype.getDtaFile();
-		x.seek(mapLocation);
+		offsetMods.add(0, 0);
+		offsetMods.add(1,  ElementTags.getTagValue("omap"));
+		offsetMods.add(2,  ElementTags.getTagValue("ovartypes"));
+		offsetMods.add(3,  ElementTags.getTagValue("ovarnames"));
+		offsetMods.add(4,  ElementTags.getTagValue("osortorder"));
+		offsetMods.add(5,  ElementTags.getTagValue("odifmt"));
+		offsetMods.add(6,  ElementTags.getTagValue("ovallabname"));
+		offsetMods.add(7,  ElementTags.getTagValue("ovarlab"));
+		offsetMods.add(8,  ElementTags.getTagValue("ocharacteristics"));
+		offsetMods.add(9,  ElementTags.getTagValue("odata"));
+		offsetMods.add(10, ElementTags.getTagValue("ostrls"));
+		offsetMods.add(11, ElementTags.getTagValue("ovallabels"));
+		offsetMods.add(12, 0);
+		offsetMods.add(13, 0);
+		ByteBuffer x = ftype.getDtaFile();
+		x.position(mapLocation);
 		for (int i = 0; i < 14; i++) {
-			byte[] position = new byte[8];
-			x.read(position);
-			Long offsetRaw = ByteBuffer.wrap(position).order(ftype.getByteSwap()).getLong();
-			offsets.add(i, (offsetRaw + offsetMods.get(i)));
+			offsets.add(i, (x.getLong() + offsetMods.get(i)));
 		}
-		x.close();
 	}
 
-	/**
-	 * Method to return all of the file position offsets
-	 * @return A map of integer indexed Long valued byte offsets
-	 */
-	public Map<Integer, Long> getOffsets() {
-		return this.stmap;
-	}
-
-	/**
-	 * The offset at the index defined by the method parameter
-	 * @param element An integer value identifying the offset to retrieve
-	 * @return A Long valued byte offset for a specific element of the .dta file
-	 */
-	public Long getOffset(Integer element) {
-		return this.stmap.get(element);
-	}
 
 
 }
