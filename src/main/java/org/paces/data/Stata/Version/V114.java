@@ -2,9 +2,8 @@ package org.paces.data.Stata.Version;
 
 import org.paces.data.Stata.Readers.DtaFileParser;
 import org.paces.data.Stata.Readers.FileElements.*;
-import org.paces.data.Stata.Readers.StataByteOrder;
 
-import java.io.RandomAccessFile;
+import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
 /**
@@ -14,15 +13,10 @@ import java.nio.ByteOrder;
 public class V114 extends OldFormats implements FileVersion, DtaFileParser {
 
 	/**
-	 * Member containing the RandomAccessFile class object used to read the
+	 * Member containing the ByteBuffer class object used to read the
 	 * bytes from the .dta file.
 	 */
-	private RandomAccessFile dataset;
-
-	/**
-	 * Member containing the StataByteOrder variable
-	 */
-	private StataByteOrder sbo;
+	private ByteBuffer dataset;
 
 	/**
 	 * Member containing the release/version number of the file
@@ -32,7 +26,7 @@ public class V114 extends OldFormats implements FileVersion, DtaFileParser {
 	/**
 	 * Member containing the endianness used to write the bytes of the file
 	 */
-	private String endian;
+	private ByteOrder endian;
 
 	/**
 	 * Member containing the number of variables in the data set
@@ -42,7 +36,7 @@ public class V114 extends OldFormats implements FileVersion, DtaFileParser {
 	/**
 	 * Member containing the number of observations in the data set
 	 */
-	private Long N;
+	private Integer N;
 
 	/**
 	 * Member containing the datalabel element if it exists
@@ -57,13 +51,13 @@ public class V114 extends OldFormats implements FileVersion, DtaFileParser {
 	/**
 	 * Member containing the position at while the map element begins.
 	 */
-	private Long mapOffset;
+	private Integer mapOffset;
 
 	/**
 	 * Class constructor for .dta file type 114.
 	 * The class is constructed by the .getVersion method of the FileFormats
 	 * class
-	 * @param stdata A RandomAccessFile object used to parse/read the bytes
+	 * @param stdata A ByteBuffer object used to parse/read the bytes
 	 *                  from the .dta file
 	 * @param release The release number of the file
 	 * @param endian The endianness the file was written with
@@ -73,16 +67,13 @@ public class V114 extends OldFormats implements FileVersion, DtaFileParser {
 	 * @param datasetTimeStamp The timestamp from the file if it exists
 	 * @param mapOffset The position where the map element of the .dta file
 	 *                     begins
-	 * @param sbo A StataByteOrder class object (used to manipulate the byte
-	 *               order if necessary)
 	 * @see org.paces.data.Stata.Version.FileFormats
 	 */
-	public V114(RandomAccessFile stdata, Integer release, String endian,
-				Short K, Long N, String datasetLabel, String datasetTimeStamp,
-				Long mapOffset, StataByteOrder sbo) {
+	public V114(ByteBuffer stdata, Integer release, ByteOrder endian,
+				Short K, Integer N, String datasetLabel, String datasetTimeStamp,
+				Integer mapOffset) {
 
 		this.dataset = stdata;
-		this.sbo = sbo;
 		this.release = release;
 		this.endian = endian;
 		this.K = K;
@@ -427,17 +418,17 @@ public class V114 extends OldFormats implements FileVersion, DtaFileParser {
 	 */
 	@Override
 	public ByteOrder getByteSwap() {
-		return this.sbo.swapto;
+		return this.endian;
 	}
 
 	/**
 	 * Method used to access the byte representation of the .dta file being
 	 * read
 	 *
-	 * @return A RandomAccessFile object representing the .dta file
+	 * @return A ByteBuffer object representing the .dta file
 	 */
 	@Override
-	public RandomAccessFile getDtaFile() {
+	public ByteBuffer getDtaFile() {
 		return this.dataset;
 	}
 
@@ -449,16 +440,6 @@ public class V114 extends OldFormats implements FileVersion, DtaFileParser {
 	@Override
 	public Integer getVersionNumber() {
 		return this.release;
-	}
-
-	/**
-	 * Method used to retrieve the endianness of the Stata file
-	 *
-	 * @return String containing either MSF (Big Endian) or LSF (Little Endian)
-	 */
-	@Override
-	public String getFileEndian() {
-		return this.endian;
 	}
 
 	/**
@@ -474,14 +455,12 @@ public class V114 extends OldFormats implements FileVersion, DtaFileParser {
 
 	/**
 	 * Method used to retrieve the number of observations in the Stata file
-	 *
 	 * @return Returns a long valued integer containing the number of
 	 * observations in the dataset
 	 */
-	@Override
-	public Long getNumObs() {
+	public Integer getNumObs() {
 		return this.N;
-	}
+	};
 
 	/**
 	 * Method used to retrieve the datalabel element from the Stata file if one
@@ -517,7 +496,7 @@ public class V114 extends OldFormats implements FileVersion, DtaFileParser {
 	 * position where the file map bytes begin.
 	 */
 	@Override
-	public Long getMapOffset() {
+	public Integer getMapOffset() {
 		return this.mapOffset;
 	}
 

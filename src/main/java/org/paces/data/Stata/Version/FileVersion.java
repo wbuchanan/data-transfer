@@ -1,6 +1,6 @@
 package org.paces.data.Stata.Version;
 
-import java.io.RandomAccessFile;
+import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
 /**
@@ -21,7 +21,7 @@ public abstract interface FileVersion<T> {
 	 * Method used to access the byte representation of the .dta file being read
 	 * @return A RandomAccessFile object representing the .dta file
 	 */
-	public RandomAccessFile getDtaFile();
+	public ByteBuffer getDtaFile();
 
 	/**
 	 * Method used to retrieve the version number
@@ -30,24 +30,11 @@ public abstract interface FileVersion<T> {
 	public Integer getVersionNumber();
 
 	/**
-	 * Method used to retrieve the endianness of the Stata file
-	 * @return String containing either MSF (Big Endian) or LSF (Little Endian)
-	 */
-	public String getFileEndian();
-
-	/**
 	 * Method used to retrieve the number of variables from the Stata File
 	 * @return An integer value of type short containing the number of
 	 * variables in the Stata data set
 	 */
 	public Short getNumVars();
-
-	/**
-	 * Method used to retrieve the number of observations in the Stata file
-	 * @return Returns a long valued integer containing the number of
-	 * observations in the dataset
-	 */
-	public Long getNumObs();
 
 	/**
 	 * Method used to retrieve the datalabel element from the Stata file if
@@ -73,6 +60,6 @@ public abstract interface FileVersion<T> {
 	 * where {@literal <map>} appears.  For older versions of Stata this
 	 * should be the position where the file map bytes begin.
 	 */
-	public Long getMapOffset();
+	public Integer getMapOffset();
 
 }

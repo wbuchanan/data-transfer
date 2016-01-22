@@ -1,6 +1,7 @@
 package org.paces.data.Stata.Readers;
 
 import org.paces.data.Stata.Readers.DtaExceptions.DtaCorrupt;
+import org.paces.data.Stata.Version.FileFormats;
 import org.paces.data.Stata.Version.FileVersion;
 import org.paces.data.Stata.Version.NewFormats;
 import org.paces.data.Stata.Version.OldFormats;
@@ -8,6 +9,10 @@ import org.paces.data.Stata.Version.OldFormats;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,18 +23,17 @@ import java.util.List;
 public class Load {
 
 
-	protected RandomAccessFile stataFile;
+	protected MappedByteBuffer stataFile;
 	protected List<byte[]> fileHeader;
-	protected FileVersion<?> filetype;
 	protected List<Object> headerData;
-	private StataByteOrder sbo;
+	protected FileVersion<?> versionedFile;
+	private ByteOrder endian;
 	private Integer release;
-	private String endian;
 	private Short K;
 	private Long N;
 	private String datasetLabel;
 	private String datasetTimeStamp;
-	private Long mapOffset;
+	private Integer mapOffset;
 
 	/**
 	 * Class constructor.  Used to read file into memory and create the
@@ -40,13 +44,19 @@ public class Load {
 	public Load(String[] args) {
 
 		try {
-			this.stataFile = new RandomAccessFile(new File(args[0]), "r");
+			RandomAccessFile raf = new RandomAccessFile(new File(args[0]), "rw");
+			FileChannel fc = raf.getChannel();
+			this.stataFile = fc.map(FileChannel.MapMode.READ_WRITE, 0, fc.size());
 			this.fileHeader = checkVersion(this.stataFile);
 			if (this.release >= 113 && this.release <= 115) {
 				this.headerData = OldFormats.readHeader(stataFile, fileHeader);
 			} else  {
 				this.headerData = NewFormats.readHeader(stataFile, fileHeader);
 			}
+			parseHeader();
+			this.versionedFile = FileFormats.getVersion(this.stataFile, this.release,
+								 this.endian, this.K, this.N, this.datasetLabel,
+								 this.datasetTimeStamp, this.mapOffset);
 		} catch (IOException | DtaCorrupt e) {
 			System.out.println(String.valueOf(e));
 		}
@@ -60,33 +70,31 @@ public class Load {
 	 */
 	public void parseHeader() {
 		this.release = (Integer) this.headerData.get(0);
-		this.endian = (String) this.headerData.get(1);
+		this.endian = (ByteOrder) this.headerData.get(1);
 		this.K = (Short) this.headerData.get(2);
 		this.N = (Long) this.headerData.get(3);
 		this.datasetLabel = (String) this.headerData.get(4);
 		this.datasetTimeStamp = (String) this.headerData.get(5);
-		this.mapOffset = (Long) this.headerData.get(6);
+		this.mapOffset = (Integer) this.headerData.get(6);
 	}
 
 	/**
 	 * Method used to check the release version of the file
 	 * @param stData The object containing the .dta data set in memory
 	 */
-	public List<byte[]> checkVersion(RandomAccessFile stData) throws
-			IOException, DtaCorrupt {
-		byte[] firstFileByte = new byte[1];
-		stData.seek(0);
-		stData.read(firstFileByte);
-		if (firstFileByte[0] >= 113 && firstFileByte[0] <= 115) {
-			this.release = (int) firstFileByte[0];
-			stData.seek(0);
-			return getByteReader((int)firstFileByte[0]);
-		} else if (firstFileByte[0] == 60) {
-			stData.seek(28);
+	public List<byte[]> checkVersion(ByteBuffer stData) throws IOException,
+			DtaCorrupt {
+		byte firstFileByte = stData.get();
+		if (firstFileByte >= 113 && firstFileByte <= 115) {
+			this.release = (int) firstFileByte;
+			stData.position(0);
+			return getByteReader((int) firstFileByte);
+		} else if (firstFileByte == 60) {
+			stData.position(28);
 			byte[] newfmt = new byte[3];
-			stData.read(newfmt);
+			stData.get(newfmt);
 			this.release = Integer.valueOf(new String(newfmt));
-			stData.seek(0);
+			stData.position(0);
 			return getByteReader(Integer.valueOf(new String(newfmt)));
 		} else {
 			throw new DtaCorrupt();

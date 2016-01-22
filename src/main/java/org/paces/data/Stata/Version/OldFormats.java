@@ -5,7 +5,7 @@ import org.paces.data.Stata.Readers.StConvert;
 import org.paces.data.Stata.Readers.StataByteOrder;
 
 import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -96,6 +96,33 @@ public abstract class OldFormats extends FileConstants {
 	/**
 	 * Static method used to parse the file header from files created from
 	 * versions 8, 10, or 12 of Stata
+	 * The order of the values returned in the list object are:
+	 * <table>
+	 *     <th>
+	 *         <td>Element</td><td>Class/Casting</td>
+	 *     </th>
+	 *     <tr>
+	 *         <td>Release Number</td><td>java.lang.Integer</td>
+	 *     </tr>
+	 *     <tr>
+	 *         <td>Byte Swap/Endianness</td><td>java.nio.ByteOrder</td>
+	 *     </tr>
+	 *     <tr>
+	 *     		<td>Variables</td><td>java.lang.Short</td>
+	 *     </tr>
+	 *     <tr>
+	 *     		<td>Observations</td><td>java.lang.Integer</td>
+	 *     </tr>
+	 *     <tr>
+	 *     		<td>Dataset Label</td><td>java.lang.String</td>
+	 *     </tr>
+	 *     <tr>
+	 *     		<td>Dataset Timestamp</td><td>java.lang.String</td>
+	 *     </tr>
+	 *     <tr>
+	 *     		<td>Filemap Offset/Position</td><td>java.lang.Integer</td>
+	 *     </tr>
+	 * </table>
 	 * @param stdata The representation of the .dta file on the JVM
 	 * @param byteReader A List of byte arrays created by the Load class
 	 *                      based on the release version of the file
@@ -104,21 +131,21 @@ public abstract class OldFormats extends FileConstants {
 	 * @throws IOException This will be caught by the class constructor for
 	 * the Load class
 	 */
-	public static List<Object> readHeader(RandomAccessFile stdata, List<byte[]>
+	public static List<Object> readHeader(ByteBuffer stdata, List<byte[]>
 			byteReader) throws IOException {
 
 		// List object used to return the header values
 		List<Object> values = new ArrayList<>();
 
 		// Set the position of the file at the beginning
-		stdata.seek(0);
+		stdata.position(0);
 
 		// Loop over the elements  of the list to read all of the header
 		// elements
 		for(int i = 0; i < byteReader.size(); i++) {
 
 			// Reads the first four bytes sequentially
-			stdata.read(byteReader.get(i));
+			stdata.get(byteReader.get(i));
 
 		} // End Loop to read the values
 
@@ -126,21 +153,18 @@ public abstract class OldFormats extends FileConstants {
 		// elements
 		byte[] val = byteReader.get(0);
 
-		// Add each of these elements to the list object
-		values.add((int) val[0]);
+		// Adds the release number to the first position
+		values.add(0, (int) val[0]);
 
 		// Get the byte array containing the byte order
 		byte[] bo = byteReader.get(1);
 
-		// 0x01 is HILO or "MSF" in later versions of the file spec
-		if ((int) bo[0] == 1) values.add("MSF");
-
-		// 0x02 is LOHI or "LSF" in later versions of the file spec
-		else values.add("LSF");
-
 		// Create a byte order variable using the byte array in position 1 of
 		// the bytereader (this is the header variable passed to the method)
 		StataByteOrder sbo = new StataByteOrder(byteReader.get(1));
+
+		// Adds the endianness/byte swap order
+		values.add(1, sbo.swapto);
 
 		// Parse the number of variables
 		Short K = StConvert.toStata(byteReader.get(4), sbo.swapto, (short) 0);
@@ -154,23 +178,20 @@ public abstract class OldFormats extends FileConstants {
 		// Parse the dataset timestamp
 		String timestamp = StConvert.toStata(byteReader.get(7), sbo.swapto, "");
 
-		// Used to store the starting position of the file map
-		Long offset = stdata.getFilePointer();
-
 		// Add the number of variables to the list object
-		values.add(K);
+		values.add(2, K);
 
 		// Add the number of observations to the list object
-		values.add(N);
+		values.add(3, N);
 
 		// Add the dataset label to the list object
-		values.add(datalabel);
+		values.add(4, datalabel);
 
 		// Add the time stamp to the list object
-		values.add(timestamp);
+		values.add(5, timestamp);
 
 		// Adds the offset to the file map in the last position
-		values.add(offset);
+		values.add(6, stdata.position());
 
 		// Return the list object
 		return values;

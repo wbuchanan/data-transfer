@@ -1,18 +1,18 @@
 package org.paces.data.Stata.Version;
 
 import org.paces.data.Stata.Readers.FileElements.*;
-import org.paces.data.Stata.Readers.StConvert;
 import org.paces.data.Stata.Readers.StataByteOrder;
 
 import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
- * Created by billy on 12/27/15.
+ * @author Billy Buchanan
+ * @version 0.0.0
  */
 public class NewFormats extends FileConstants {
 
@@ -64,7 +64,8 @@ public class NewFormats extends FileConstants {
 
 	/**
 	 * Method to access the element tags
-	 * @return
+	 * @return An ElementTags class object...used to lookup the byte length
+	 * of the xml style character tags in the file
 	 */
 	public ElementTags getEtags() {
 		return this.etags;
@@ -93,6 +94,33 @@ public class NewFormats extends FileConstants {
 	/**
 	 * Static method used to parse the file header from files created from
 	 * versions 8, 10, or 12 of Stata
+	 * The order of the values returned in the list object are:
+	 * <table>
+	 *     <th>
+	 *         <td>Element</td><td>Class/Casting</td>
+	 *     </th>
+	 *     <tr>
+	 *         <td>Release Number</td><td>java.lang.Integer</td>
+	 *     </tr>
+	 *     <tr>
+	 *         <td>Byte Swap/Endianness</td><td>java.nio.ByteOrder</td>
+	 *     </tr>
+	 *     <tr>
+	 *     		<td>Variables</td><td>java.lang.Short</td>
+	 *     </tr>
+	 *     <tr>
+	 *     		<td>Observations</td><td>java.lang.Integer (V117) / java.lang.Long (V118) </td>
+	 *     </tr>
+	 *     <tr>
+	 *     		<td>Dataset Label</td><td>java.lang.String</td>
+	 *     </tr>
+	 *     <tr>
+	 *     		<td>Dataset Timestamp</td><td>java.lang.String</td>
+	 *     </tr>
+	 *     <tr>
+	 *     		<td>Filemap Offset/Position</td><td>java.lang.Integer</td>
+	 *     </tr>
+	 * </table>
 	 * @param stdata The representation of the .dta file on the JVM
 	 * @param byteReader A List of byte arrays created by the Load class
 	 *                      based on the release version of the file
@@ -101,26 +129,26 @@ public class NewFormats extends FileConstants {
 	 * @throws IOException This will be caught by the class constructor for
 	 * the Load class
 	 */
-	public static List<Object> readHeader(RandomAccessFile stdata,
+	public static List<Object> readHeader(ByteBuffer stdata,
 											List<byte[]> byteReader) throws IOException {
 
 		// List object used to return the header values
 		List<Object> values = new ArrayList<>();
 
 		// Set the position of the file at the beginning
-		stdata.seek(RELEASE_OFFSET);
+		stdata.position(RELEASE_OFFSET);
 
 		// Reads the bytes that fit into the first byte array
-		stdata.read(byteReader.get(0));
+		stdata.get(byteReader.get(0));
 
 		// Converts the value to an Integer value
 		Integer release = Integer.valueOf(new String(byteReader.get(0)));
 
 		// Moves the byte position of the reader to the next set of values
-		stdata.seek(BYTEORDER_OFFSET);
+		stdata.position(BYTEORDER_OFFSET);
 
 		// Reads the byte order into the next byte array
-		stdata.read(byteReader.get(1));
+		stdata.get(byteReader.get(1));
 
 		// Stores the byte order as a String
 		String bo = new String(byteReader.get(1));
@@ -129,56 +157,55 @@ public class NewFormats extends FileConstants {
 		// the bytereader (this is the header variable passed to the method)
 		StataByteOrder sbo = new StataByteOrder(bo);
 
+		// Sets the current byteswap order
+		stdata.order(sbo.swapto);
+
 		// Moves the reader to the bytes containing the number of variables
-		stdata.seek(NVARS_OFFSET);
+		stdata.position(NVARS_OFFSET);
 
 		// Reads the number of variables into the two-byte array in the list
-		stdata.read(byteReader.get(2));
+		Short K = stdata.getShort();
 
-		// Parse the number of variables
-		Short K = StConvert.toStata(byteReader.get(2), sbo.swapto, (short) 0);
+		// Adds the integer value of the release in index 0
+		values.add(0, release);
+
+		// Adds the byte order to use when reading the data
+		values.add(1, sbo.swapto);
 
 		// Add the number of variables to the list object
-		values.add(K);
+		values.add(2, K);
 
 		// Moves the reader to the position where the number of observations
 		// are stored
-		stdata.seek(NOBS_OFFSET);
-
-		// Reads the bytes into either a 4 or 8 byte array depending on file
-		// version
-		stdata.read(byteReader.get(3));
+		stdata.position(NOBS_OFFSET);
 
 		// Files created by Stata 13 use 4-byte integer number of observations
 		if (release == 117) {
 
 			// Parse the number of observations
-			Integer N = StConvert.toStata(byteReader.get(3), sbo.swapto, 0);
+			Integer N = stdata.getInt();
 
 			// Add the number of observations to the list object
-			values.add(N);
+			values.add(3, N);
 
 		// If the release number is later number of observations is a long
 		} else {
 
 			// Newest version of Stata uses 8 byte number of observations
-			Long N = StConvert.toStata(byteReader.get(3), sbo.swapto, (long) 0);
+			Long N = stdata.getLong();
 
 			// Add the number of observations to the list object
-			values.add(N);
+			values.add(3, N);
 
 		} // End ELSE Block for Stata files generated by Version >= 14
 
 		// Adds the byte length of the </N> and <label> tags to the current
 		// position
-		Long offset = stdata.getFilePointer() + ElementTags.getTagValue
+		Integer offset = stdata.position() + ElementTags.getTagValue
 				("cnobs") + ElementTags.getTagValue("odatalabel");
 
 		// Moves to that position
-		stdata.seek(offset);
-
-		// Gets the length of the data label
-		stdata.read(byteReader.get(4));
+		stdata.position(offset);
 
 		// Create byte array variable for dataset label
 		byte[] dlab;
@@ -187,7 +214,7 @@ public class NewFormats extends FileConstants {
 		if (release == 117) {
 
 			// Length of the data set label is a 1 byte integer
-			Byte lablength = StConvert.toStata(byteReader.get(4), sbo.swapto, (byte) 0);
+			Byte lablength = stdata.get();
 
 			// Initialize new byte array to read the dataset label
 			dlab = new byte[(int) lablength];
@@ -196,40 +223,31 @@ public class NewFormats extends FileConstants {
 		} else {
 
 			// Length of the data set label is a 2 byte integer
-			Short lablength = StConvert.toStata(byteReader.get(4), sbo.swapto, (short) 0);
+			Short lablength = stdata.getShort();
 
 			// Initialize new byte array to read the dataset label
 			dlab = new byte[(int) lablength];
 
 		} // End ELSE Block for Stata 14 and Later files
 
-		// Read the dataset label
-		stdata.read(dlab);
-
 		// Parse the label into a string
-		String datalabel = StConvert.toStata(dlab, sbo.swapto, "");
+		String datalabel = String.valueOf(stdata.get(dlab));
 
 		// Add the dataset label to the list object
-		values.add(datalabel);
+		values.add(4, datalabel);
 
 		// Update the offset after reading the dataset label
-		offset = stdata.getFilePointer() + ElementTags.getTagValue
+		offset = stdata.position() + ElementTags.getTagValue
 				("cdatalabel") + ElementTags.getTagValue("otimestamp");
 
 		// Move the byte reader
-		stdata.seek(offset);
-
-		// Read the indicator of whether or not there is a timestamp
-		stdata.read(byteReader.get(5));
+		stdata.position(offset);
 
 		// Parse the dataset timestamp
-		Byte hasTimeStamp = StConvert.toStata(byteReader.get(5), sbo.swapto, (byte) 0);
+		Byte hasTimeStamp = stdata.get();
 
 		// byte array to store the timestamp
 		byte[] tsdata = new byte[17];
-
-		// Either reads a time stamp or random junk/placeholder values
-		stdata.read(tsdata);
 
 		// Container for the string value used to represent the timestamp
 		// element
@@ -239,7 +257,7 @@ public class NewFormats extends FileConstants {
 		if (hasTimeStamp == 17) {
 
 			// Convert the byte array with the time stamp into a String
-			timestamp = StConvert.toStata(tsdata, sbo.swapto, "");
+			timestamp = String.valueOf(stdata.get(tsdata));
 
 		// If it is any other value
 		} else {
@@ -250,13 +268,13 @@ public class NewFormats extends FileConstants {
 		} // End ELSE Block
 
 		// Add the time stamp to the list object
-		values.add(timestamp);
+		values.add(5, timestamp);
 
 		// Moves to the start of the Map element
-		offset = stdata.getFilePointer() + ElementTags.getTagValue("ctimestamp");
+		offset = stdata.position() + ElementTags.getTagValue("ctimestamp");
 
 		// Adds the offset for the map element in the last position of the list
-		values.add(offset);
+		values.add(6, offset);
 
 		// Return the list object
 		return values;
