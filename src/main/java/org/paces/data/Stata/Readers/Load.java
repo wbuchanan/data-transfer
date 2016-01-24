@@ -31,7 +31,6 @@ public class Load {
 	private ByteOrder endian;
 	private Integer release;
 	private Short K;
-	private Long N;
 	private String datasetLabel;
 	private String datasetTimeStamp;
 	private Integer mapOffset;
@@ -55,9 +54,15 @@ public class Load {
 				this.headerData = NewFormats.readHeader(stataFile, fileHeader);
 			}
 			parseHeader();
-			this.versionedFile = FileFormats.getVersion(this.stataFile, this.release,
-								 this.endian, this.K, this.N, this.datasetLabel,
-								 this.datasetTimeStamp, this.mapOffset);
+			if (this.release == 118) {
+				this.versionedFile = FileFormats.getVersion(this.sfMap, this.release,
+						this.endian, this.K, (Long) this.headerData.get(3),
+						this.datasetLabel, this.datasetTimeStamp, this.mapOffset);
+			} else {
+				this.versionedFile = FileFormats.getVersion(this.sfMap, this.release,
+						this.endian, this.K, (Integer) this.headerData.get(3),
+						this.datasetLabel, this.datasetTimeStamp, this.mapOffset);
+			}
 		} catch (IOException | DtaCorrupt e) {
 			System.out.println(String.valueOf(e));
 		}
@@ -73,7 +78,6 @@ public class Load {
 		this.release = (Integer) this.headerData.get(0);
 		this.endian = (ByteOrder) this.headerData.get(1);
 		this.K = (Short) this.headerData.get(2);
-		this.N = (Long) this.headerData.get(3);
 		this.datasetLabel = (String) this.headerData.get(4);
 		this.datasetTimeStamp = (String) this.headerData.get(5);
 		this.mapOffset = (Integer) this.headerData.get(6);
@@ -101,8 +105,6 @@ public class Load {
 			throw new DtaCorrupt();
 		}
 	}
-
-
 
 	/**
 	 * Method used to create a List of byte array objects used to parse the
