@@ -3,6 +3,7 @@ package org.paces.data.Stata.Readers.FileElements;
 import org.paces.data.Stata.Version.*;
 
 import java.io.IOException;
+import java.nio.ByteOrder;
 
 /**
  * Created by billy on 12/25/15.
@@ -10,6 +11,8 @@ import java.io.IOException;
 public class DtaData {
 
 	DtaVarTypes stVariableTypes;
+
+	private ByteOrder sbo;
 
 	DtaData(V113 stdata) throws IOException {
 
