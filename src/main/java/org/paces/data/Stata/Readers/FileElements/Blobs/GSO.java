@@ -1,7 +1,6 @@
-package org.paces.data.Stata.Readers.Blobs;
+package org.paces.data.Stata.Readers.FileElements.Blobs;
 
 import java.nio.ByteBuffer;
-import java.util.Map;
 
 /**
  * @author Billy Buchanan

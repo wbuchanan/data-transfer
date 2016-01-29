@@ -1,5 +1,6 @@
 package org.paces.data.Stata.Readers.FileElements;
 
+import org.paces.data.Stata.Readers.FileElements.Characteristics.DtaCharacteristics;
 import org.paces.data.Stata.Version.FileVersion;
 
 import java.io.IOException;
@@ -109,8 +110,10 @@ public class DtaMap {
 
 		// Need to read characteristics to determine the length of this field
 		DtaCharacteristics tmp = new DtaCharacteristics(ftype, offsets.get(8));
-		offsets.add(9, tmp.getEndPosition());
-		osmap.put(mapElems[9], tmp.getEndPosition());
+		Long charlength = tmp.getCharLength();
+		offsets.add(9, offsets.get(8) + charlength);
+		osmap.put(mapElems[9], offsets.get(8) + charlength);
+
 	}
 
 

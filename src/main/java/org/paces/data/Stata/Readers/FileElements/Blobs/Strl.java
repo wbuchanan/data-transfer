@@ -1,4 +1,4 @@
-package org.paces.data.Stata.Readers.Blobs;
+package org.paces.data.Stata.Readers.FileElements.Blobs;
 
 import java.nio.ByteBuffer;
 

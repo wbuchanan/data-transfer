@@ -2,7 +2,9 @@ package org.paces.data.Stata.Readers.FileElements;
 
 import org.paces.data.Stata.Version.FileVersion;
 
+import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentSkipListMap;
@@ -21,7 +23,7 @@ public class DtaVarTypes {
 			".h", ".i", ".j", ".k", ".l", ".m", ".n", ".o", ".p", ".q", ".r",
 			".s", ".t", ".u", ".v", ".w", ".x", ".y", ".z"};
 
-	DtaVarTypes(FileVersion<?> data, Integer offset) {
+	DtaVarTypes(FileVersion<?> data, Long offset) throws IOException {
 		if (data.getVersionNumber() >= 117) {
 			setNewTypes();
 			DtaVarTypesNew(data.getDtaFile(), offset, data.getNumVars());
@@ -31,15 +33,16 @@ public class DtaVarTypes {
 		}
 	}
 
-	public void DtaVarTypesNew(ByteBuffer stdata, Integer offset, Short nvars) {
-		stdata.position(offset);
+	public void DtaVarTypesNew(FileChannel data, Long offset, Short nvars)
+			throws IOException {
+		ByteBuffer stdata = data.map(FileChannel.MapMode.READ_ONLY, offset, nvars*2);
 		for (int i = 0; i < nvars; i++) {
 			stVariableTypes.add(i, (int) stdata.getShort());
 		}
 	}
 
-	public void DtaVarTypesOld(ByteBuffer stdata, Integer offset, Short nvars) {
-		stdata.position(offset);
+	public void DtaVarTypesOld(FileChannel data, Long offset, Short nvars) throws IOException {
+		ByteBuffer stdata = data.map(FileChannel.MapMode.READ_ONLY, offset, nvars*2);
 		for (int i = 0; i < nvars; i++) {
 			stVariableTypes.add(i, (int) stdata.get());
 		}

@@ -4,7 +4,8 @@ import org.paces.data.Stata.Readers.StConvert;
 import org.paces.data.Stata.Version.FileVersion;
 
 import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,10 +33,8 @@ public class DtaVariableNames {
 			throws IOException {
 
 		// Creates connection to the dataset file
-		RandomAccessFile x = stdata.getDtaFile();
-
-		// Moves the byte reader to the position where variable names start
-		x.seek(offset);
+		ByteBuffer x = stdata.getDtaFile().map(FileChannel.MapMode.READ_ONLY,
+				offset, stdata.getDtaFile().size() - offset);
 
 		// Loop over the number of variables in the dataset
 		for (int i = 0; i < numberVariables; i++) {
@@ -44,16 +43,13 @@ public class DtaVariableNames {
 			byte[] vnm = getByteArray(stdata.getVersionNumber());
 
 			// Read bytes into the byte array
-			x.read(vnm);
+			x.get(vnm);
 
 			// Convert the bytes to a string and add it to the list of
 			// variable names
 			this.varnames.add(i, StConvert.toStata(vnm, stdata.getByteSwap(), ""));
 
 		} // End Loop over the variables
-
-		// Closes the connection to the file
-		x.close();
 
 	} // End Method declaration
 

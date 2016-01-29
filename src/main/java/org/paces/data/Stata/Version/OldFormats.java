@@ -1,6 +1,7 @@
 package org.paces.data.Stata.Version;
 
 import org.paces.data.Stata.Readers.FileElements.*;
+import org.paces.data.Stata.Readers.FileElements.Characteristics.DtaCharacteristics;
 import org.paces.data.Stata.Readers.StConvert;
 import org.paces.data.Stata.Readers.StataByteOrder;
 

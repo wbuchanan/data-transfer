@@ -13,6 +13,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.stata:sfi:14" level="project" />
     <orderEntry type="library" name="Maven: org.paces-consulting:stata-java:0.0.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.ggasoftware:parso:1.2.1" level="project" />
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">
     <option name="_basePreferences">

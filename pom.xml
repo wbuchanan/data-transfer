@@ -118,6 +118,22 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
+		<!-- This dependency isn't used currently, but I want to reserve its
+		use in the future to help with parsing .sas7bdat files.  -->
+		<dependency>
+			<groupId>com.ggasoftware</groupId>
+			<artifactId>parso</artifactId>
+			<version>1.2.1</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.opendatafoundation</groupId>
+			<artifactId>data</artifactId>
+			<version>1.0</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
 
 	</dependencies>
 

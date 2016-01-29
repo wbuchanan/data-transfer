@@ -2,6 +2,7 @@ package org.paces.data.Stata.Version;
 
 import org.paces.data.Stata.Readers.DtaFileParser;
 import org.paces.data.Stata.Readers.FileElements.*;
+import org.paces.data.Stata.Readers.FileElements.Characteristics.DtaCharacteristics;
 
 import java.nio.ByteOrder;
 import java.nio.channels.FileChannel;

@@ -1,6 +1,7 @@
 package org.paces.data.Stata.Readers;
 
 import org.paces.data.Stata.Readers.FileElements.*;
+import org.paces.data.Stata.Readers.FileElements.Characteristics.DtaCharacteristics;
 import org.paces.data.Stata.Version.FileVersion;
 
 import java.nio.ByteOrder;
