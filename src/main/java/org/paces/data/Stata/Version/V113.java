@@ -1,8 +1,15 @@
 package org.paces.data.Stata.Version;
 
-import org.paces.data.Stata.Readers.DtaFileParser;
-import org.paces.data.Stata.Readers.FileElements.*;
 import org.paces.data.Stata.Readers.FileElements.Characteristics.DtaCharacteristics;
+import org.paces.data.Stata.Readers.FileElements.Data.DtaData;
+import org.paces.data.Stata.Readers.FileElements.DisplayFormats.DtaDisplayFormats;
+import org.paces.data.Stata.Readers.FileElements.Map.DtaMap;
+import org.paces.data.Stata.Readers.FileElements.SortOrder.DtaSortOrder;
+import org.paces.data.Stata.Readers.FileElements.ValueLabels.DtaValueLabel;
+import org.paces.data.Stata.Readers.FileElements.ValueLabels.DtaValueLabelNames;
+import org.paces.data.Stata.Readers.FileElements.VariableLabels.DtaVariableLabels;
+import org.paces.data.Stata.Readers.FileElements.VariableNames.DtaVariableNames;
+import org.paces.data.Stata.Readers.FileElements.VariableTypes.DtaVarTypes;
 
 import java.nio.ByteOrder;
 import java.nio.channels.FileChannel;
@@ -11,7 +18,7 @@ import java.nio.channels.FileChannel;
  * @author Billy Buchanan
  * @version 0.0.0
  */
-public class V113 extends OldFormats implements FileVersion, DtaFileParser {
+public class V113 extends OldFormats implements FileVersion {
 
 	/**
 	 * Member containing the RandomAccessFile class object used to read the
@@ -102,7 +109,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 * @return An initialized DtaMap object that can be used to navigate the
 	 * byte positions for data elements in the .dta file
 	 */
-	@Override
+	
 	public DtaMap setFileMap(FileVersion<?> stData, Long mapOffset, ByteOrder sbo) {
 		return null;
 	}
@@ -126,7 +133,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 * @return An initialized DtaMap object that can be used to navigate the
 	 * byte positions for data elements in the .dta file
 	 */
-	@Override
+	
 	public DtaMap setFileMap(FileVersion<?> stData, Long mapOffset, Short nvars, ByteOrder sbo) {
 		return null;
 	}
@@ -145,7 +152,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 * @return An initialized DtaVarTypes object (used to determine how to
 	 * read/cast the bytes of the file)
 	 */
-	@Override
+	
 	public DtaVarTypes setDataTypes(FileVersion<?> stData, Short nvars, ByteOrder sbo) {
 		return null;
 	}
@@ -162,7 +169,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 *               StataByteOrder.swapto.
 	 * @return An initialized DtaVariableNames object
 	 */
-	@Override
+	
 	public DtaVariableNames setVariableNames(FileVersion<?> stData, Short nvars, ByteOrder sbo) {
 		return null;
 	}
@@ -179,7 +186,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 *               StataByteOrder.swapto.
 	 * @return An initialized DtaSortOrder object
 	 */
-	@Override
+	
 	public DtaSortOrder setSortOrder(FileVersion<?> stData, Short nvars, ByteOrder sbo) {
 		return null;
 	}
@@ -196,7 +203,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 *               StataByteOrder.swapto.
 	 * @return An initialized DtaDisplayFormats object
 	 */
-	@Override
+	
 	public DtaDisplayFormats setDisplayFmts(FileVersion<?> stData, Short nvars, ByteOrder sbo) {
 		return null;
 	}
@@ -213,7 +220,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 *               StataByteOrder.swapto.
 	 * @return An initialized DtaValueLabelNames object
 	 */
-	@Override
+	
 	public DtaValueLabelNames setValLabNames(FileVersion<?> stData, Short nvars, ByteOrder sbo) {
 		return null;
 	}
@@ -230,7 +237,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 *               StataByteOrder.swapto.
 	 * @return An initialized DtaVariableLabels object
 	 */
-	@Override
+	
 	public DtaVariableLabels setVarLabs(FileVersion<?> stData, Short nvars, ByteOrder sbo) {
 		return null;
 	}
@@ -246,24 +253,8 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 *               StataByteOrder.swapto.
 	 * @return An initialized DtaCharacteristics object
 	 */
-	@Override
+	
 	public DtaCharacteristics setCharacteristics(FileVersion<?> stData, ByteOrder sbo) {
-		return null;
-	}
-
-	/**
-	 * Method used to initialize an object containing the strLs (if any) in the
-	 * dataset.
-	 *
-	 * @param stData The version specific file used to control reading/parsing
-	 * @param sbo    A ByteOrder class value used to specify the order in which
-	 *               the byte values of the file should be read.  This should be
-	 *               passed from the Load class and will be the value from
-	 *               StataByteOrder.swapto.
-	 * @return An initialized DtaStrLs object
-	 */
-	@Override
-	public DtaStrLs setStrLs(FileVersion<?> stData, ByteOrder sbo) {
 		return null;
 	}
 
@@ -278,7 +269,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 *               StataByteOrder.swapto.
 	 * @return An initialized DtaValueLabel object
 	 */
-	@Override
+	
 	public DtaValueLabel setValueLabels(FileVersion<?> stData, ByteOrder sbo) {
 		return null;
 	}
@@ -296,7 +287,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 *               StataByteOrder.swapto.
 	 * @return An initialized DtaData class object
 	 */
-	@Override
+	
 	public DtaData setData(FileVersion<?> stData, Short nvars, Long nobs, ByteOrder sbo) {
 		return null;
 	}
@@ -306,7 +297,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 *
 	 * @return A DtaMap object
 	 */
-	@Override
+	
 	public DtaMap getFileMap() {
 		return null;
 	}
@@ -316,7 +307,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 *
 	 * @return A DtaVarTypes object
 	 */
-	@Override
+	
 	public DtaVarTypes getDtaTypes() {
 		return null;
 	}
@@ -326,7 +317,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 *
 	 * @return A DtaVariableNames object
 	 */
-	@Override
+	
 	public DtaVariableNames getVariableNames() {
 		return null;
 	}
@@ -336,7 +327,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 *
 	 * @return A DtaSortOrder object
 	 */
-	@Override
+	
 	public DtaSortOrder getSortOrder() {
 		return null;
 	}
@@ -346,7 +337,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 *
 	 * @return A DtaDisplayFormats object
 	 */
-	@Override
+	
 	public DtaDisplayFormats getDisplayFmts() {
 		return null;
 	}
@@ -356,7 +347,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 *
 	 * @return A DtaValueLabelNames object
 	 */
-	@Override
+	
 	public DtaValueLabelNames getValLabNames() {
 		return null;
 	}
@@ -366,7 +357,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 *
 	 * @return A DtaVariableLabels object
 	 */
-	@Override
+	
 	public DtaVariableLabels getVarLabs() {
 		return null;
 	}
@@ -376,18 +367,8 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 *
 	 * @return A DtaCharacteristics object
 	 */
-	@Override
+	
 	public DtaCharacteristics getCharacteristics() {
-		return null;
-	}
-
-	/**
-	 * Method used to access the DtaStrLs object of the class
-	 *
-	 * @return A DtaStrLs object
-	 */
-	@Override
-	public DtaStrLs getStrLs() {
 		return null;
 	}
 
@@ -396,7 +377,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 *
 	 * @return A DtaValueLabel object
 	 */
-	@Override
+	
 	public DtaValueLabel getValueLabels() {
 		return null;
 	}
@@ -406,7 +387,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 *
 	 * @return A DtaData object
 	 */
-	@Override
+	
 	public DtaData getData() {
 		return null;
 	}
@@ -417,7 +398,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 * @return A ByteOrder variable used to define the order in which the bytes
 	 * from the .dta file should be read.
 	 */
-	@Override
+	
 	public ByteOrder getByteSwap() {
 		return this.endian;
 	}
@@ -428,7 +409,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 *
 	 * @return A RandomAccessFile object representing the .dta file
 	 */
-	@Override
+	
 	public FileChannel getDtaFile() {
 		return this.dataset;
 	}
@@ -438,7 +419,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 *
 	 * @return The integer value of the release number
 	 */
-	@Override
+	
 	public Integer getVersionNumber() {
 		return this.release;
 	}
@@ -449,7 +430,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 * @return An integer value of type short containing the number of variables
 	 * in the Stata data set
 	 */
-	@Override
+	
 	public Short getNumVars() {
 		return this.K;
 	}
@@ -470,7 +451,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 * @return Returns an empty string if no datalabel is in the file, else
 	 * provides the label
 	 */
-	@Override
+	
 	public String getDatasetLabel() {
 		return this.datasetLabel;
 	}
@@ -482,7 +463,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 * @return Returns either an empty string or the time stamp element from the
 	 * Stata data set
 	 */
-	@Override
+	
 	public String getDatasetTimeStamp() {
 		return this.datasetTimeStamp;
 	}
@@ -496,7 +477,7 @@ public class V113 extends OldFormats implements FileVersion, DtaFileParser {
 	 * {@literal <map>} appears.  For older versions of Stata this should be the
 	 * position where the file map bytes begin.
 	 */
-	@Override
+	
 	public Integer getMapOffset() {
 		return this.mapOffset;
 	}

@@ -1,7 +1,17 @@
 package org.paces.data.Stata.Version;
 
 import org.paces.data.Stata.Readers.FileElements.*;
+import org.paces.data.Stata.Readers.FileElements.Blobs.GsoContainer;
 import org.paces.data.Stata.Readers.FileElements.Characteristics.DtaCharacteristics;
+import org.paces.data.Stata.Readers.FileElements.Data.DtaData;
+import org.paces.data.Stata.Readers.FileElements.DisplayFormats.DtaDisplayFormats;
+import org.paces.data.Stata.Readers.FileElements.Map.DtaMap;
+import org.paces.data.Stata.Readers.FileElements.SortOrder.DtaSortOrder;
+import org.paces.data.Stata.Readers.FileElements.ValueLabels.DtaValueLabel;
+import org.paces.data.Stata.Readers.FileElements.ValueLabels.DtaValueLabelNames;
+import org.paces.data.Stata.Readers.FileElements.VariableLabels.DtaVariableLabels;
+import org.paces.data.Stata.Readers.FileElements.VariableNames.DtaVariableNames;
+import org.paces.data.Stata.Readers.FileElements.VariableTypes.DtaVarTypes;
 import org.paces.data.Stata.Readers.StataByteOrder;
 
 import java.io.IOException;
@@ -34,12 +44,12 @@ public class NewFormats extends FileConstants {
 	protected DtaVariableLabels varLabels;
 	protected DtaVariableNames varnames;
 	protected DtaVarTypes dataTypes;
-	protected DtaStrLs stBlobs;
+	protected GsoContainer stBlobs;
 
 	/**
 	 * Member used to Parse/Store Blobs
 	 */
-	public DtaStrLs blobs = null;
+	public GsoContainer blobs = null;
 
 	protected static final int RELEASE_OFFSET = ElementTags.getTagValue("odta") +
 												ElementTags.getTagValue("oheader") +

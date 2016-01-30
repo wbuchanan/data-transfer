@@ -1,7 +1,17 @@
 package org.paces.data.Stata.Readers;
 
-import org.paces.data.Stata.Readers.FileElements.*;
+import org.paces.data.Stata.Readers.FileElements.Blobs.GsoContainer;
+import org.paces.data.Stata.Readers.FileElements.Blobs.Strl;
 import org.paces.data.Stata.Readers.FileElements.Characteristics.DtaCharacteristics;
+import org.paces.data.Stata.Readers.FileElements.Data.DtaData;
+import org.paces.data.Stata.Readers.FileElements.DisplayFormats.DtaDisplayFormats;
+import org.paces.data.Stata.Readers.FileElements.Map.DtaMap;
+import org.paces.data.Stata.Readers.FileElements.SortOrder.DtaSortOrder;
+import org.paces.data.Stata.Readers.FileElements.ValueLabels.DtaValueLabel;
+import org.paces.data.Stata.Readers.FileElements.ValueLabels.DtaValueLabelNames;
+import org.paces.data.Stata.Readers.FileElements.VariableLabels.DtaVariableLabels;
+import org.paces.data.Stata.Readers.FileElements.VariableNames.DtaVariableNames;
+import org.paces.data.Stata.Readers.FileElements.VariableTypes.DtaVarTypes;
 import org.paces.data.Stata.Version.FileVersion;
 
 import java.nio.ByteOrder;
@@ -151,7 +161,7 @@ public abstract interface DtaFileParser {
 	 *               StataByteOrder.swapto.
 	 * @return An initialized DtaStrLs object
 	 */
-	DtaStrLs setStrLs(FileVersion<?> stData, ByteOrder sbo);
+	Strl setStrLs(FileVersion<?> stData, ByteOrder sbo);
 
 	/**
 	 * Method used to initialize an object containing the value label tables
@@ -231,7 +241,7 @@ public abstract interface DtaFileParser {
 	 * Method used to access the DtaStrLs object of the class
 	 * @return A DtaStrLs object
 	 */
-	DtaStrLs getStrLs();
+	GsoContainer getStrLs();
 
 	/**
 	 * Method used to access the DtaValueLabel object of the class

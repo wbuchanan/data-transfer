@@ -58,7 +58,8 @@ public class Strl118 implements Strl {
 	 */
 	private ByteOrder bo;
 
-
+	public Strl118() {
+	}
 
 	/**
 	 * Class constructor to parse strL datum elements from the data element

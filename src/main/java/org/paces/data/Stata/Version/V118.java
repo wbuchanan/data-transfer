@@ -1,8 +1,18 @@
 package org.paces.data.Stata.Version;
 
 import org.paces.data.Stata.Readers.DtaFileParser;
-import org.paces.data.Stata.Readers.FileElements.*;
+import org.paces.data.Stata.Readers.FileElements.Blobs.GsoContainer;
+import org.paces.data.Stata.Readers.FileElements.Blobs.Strl;
 import org.paces.data.Stata.Readers.FileElements.Characteristics.DtaCharacteristics;
+import org.paces.data.Stata.Readers.FileElements.Data.DtaData;
+import org.paces.data.Stata.Readers.FileElements.DisplayFormats.DtaDisplayFormats;
+import org.paces.data.Stata.Readers.FileElements.Map.DtaMap;
+import org.paces.data.Stata.Readers.FileElements.SortOrder.DtaSortOrder;
+import org.paces.data.Stata.Readers.FileElements.ValueLabels.DtaValueLabel;
+import org.paces.data.Stata.Readers.FileElements.ValueLabels.DtaValueLabelNames;
+import org.paces.data.Stata.Readers.FileElements.VariableLabels.DtaVariableLabels;
+import org.paces.data.Stata.Readers.FileElements.VariableNames.DtaVariableNames;
+import org.paces.data.Stata.Readers.FileElements.VariableTypes.DtaVarTypes;
 
 import java.nio.ByteOrder;
 import java.nio.channels.FileChannel;
@@ -263,7 +273,7 @@ public class V118 extends NewFormats implements FileVersion, DtaFileParser {
 	 * @return An initialized DtaStrLs object
 	 */
 	@Override
-	public DtaStrLs setStrLs(FileVersion<?> stData, ByteOrder sbo) {
+	public Strl setStrLs(FileVersion<?> stData, ByteOrder sbo) {
 		return null;
 	}
 
@@ -387,7 +397,7 @@ public class V118 extends NewFormats implements FileVersion, DtaFileParser {
 	 * @return A DtaStrLs object
 	 */
 	@Override
-	public DtaStrLs getStrLs() {
+	public GsoContainer getStrLs() {
 		return null;
 	}
 

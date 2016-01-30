@@ -111,6 +111,7 @@
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>
+		<!--
 		<dependency>
 			<groupId>org.paces-consulting</groupId>
 			<artifactId>stata-java</artifactId>
@@ -118,6 +119,7 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
+		-->
 		<!-- This dependency isn't used currently, but I want to reserve its
 		use in the future to help with parsing .sas7bdat files.  -->
 		<dependency>

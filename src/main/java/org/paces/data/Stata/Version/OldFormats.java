@@ -1,7 +1,15 @@
 package org.paces.data.Stata.Version;
 
-import org.paces.data.Stata.Readers.FileElements.*;
 import org.paces.data.Stata.Readers.FileElements.Characteristics.DtaCharacteristics;
+import org.paces.data.Stata.Readers.FileElements.Data.DtaData;
+import org.paces.data.Stata.Readers.FileElements.DisplayFormats.DtaDisplayFormats;
+import org.paces.data.Stata.Readers.FileElements.Map.DtaMap;
+import org.paces.data.Stata.Readers.FileElements.SortOrder.DtaSortOrder;
+import org.paces.data.Stata.Readers.FileElements.ValueLabels.DtaValueLabel;
+import org.paces.data.Stata.Readers.FileElements.ValueLabels.DtaValueLabelNames;
+import org.paces.data.Stata.Readers.FileElements.VariableLabels.DtaVariableLabels;
+import org.paces.data.Stata.Readers.FileElements.VariableNames.DtaVariableNames;
+import org.paces.data.Stata.Readers.FileElements.VariableTypes.DtaVarTypes;
 import org.paces.data.Stata.Readers.StConvert;
 import org.paces.data.Stata.Readers.StataByteOrder;
 
@@ -29,7 +37,6 @@ public abstract class OldFormats extends FileConstants {
 	protected DtaVariableLabels varLabels;
 	protected DtaVariableNames varnames;
 	protected DtaVarTypes dataTypes;
-	protected DtaStrLs stBlobs;
 
 	/***
 	 * Number of bytes to reserve for reading the release ID from the file

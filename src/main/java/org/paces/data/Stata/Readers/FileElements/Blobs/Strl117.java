@@ -49,6 +49,8 @@ public class Strl117 implements Strl {
 
 	Integer o;
 
+	public Strl117() {
+	}
 
 	public Strl117(ByteBuffer buffer) {
 		parseMembers(buffer);
